@@ -4,7 +4,7 @@ En partenariat avec l'entreprise [SECAPEM](https://www.secapem.com), spécialis�
 
 Le projet a aussi pour vocation de concevoir la trame d'un projet dédié aux futurs étudiants ingénieurs en Systèmes Embarqués dans le cadre de l'enseignement de VHDL.
 
-<img width="640" alt="Logo" src="https://user-images.githubusercontent.com/47628329/149768650-ff209ae0-fd19-4aae-9edd-0716ceb72796.png">
+<img width="600" alt="Logo" src="https://user-images.githubusercontent.com/47628329/149768650-ff209ae0-fd19-4aae-9edd-0716ceb72796.png" align="center">
 
 Notre processeur est composé des différents blocs suivants :
 
