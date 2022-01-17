@@ -13,7 +13,9 @@ L’Unité Arithmétique et Logique (UAL) ou Arithmetic-Logic Unit (ALU) en angl
 
 ### Program Counter
 Le Program Counter (PC) est un pointeur d'instruction. C'est un registre contenant l'emplacement de l'instruction en cours d'exécution.
+
 ### Data Memory
+La data memory ou mémoire de données est un espace mémoire de masse dans lequel les données sont stockées ou récupérées. Chaque emplacement de cette zone mémoire stock 8 bits et est accessible avec une adresse de 32 bits soit 4 294 967 296 emplacements mémoires de 8 bits. Cette mémoire de masse permet de stocker des données depuis le banc de registres avec des instructions de Store et de récupérer ces informations stockées avec des instructions de Load.
 
 ### Instruction Memory
 Le bloc instruction memory sert à créer des espaces mémoires pour nos instructions. Il prend en entrée la clock ainsi que le reset utile pour le fonctionnement de toute notre architecture. En entrée, nous retrouverons aussi le signal produit par le program counter. En sortie, on retrouvera l’instruction que nous aimerions réaliser à l’aide de l’architecture.
