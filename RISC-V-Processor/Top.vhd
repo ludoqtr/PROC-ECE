@@ -211,7 +211,8 @@ architecture archi of Top is
 	-- instruction decoder
 	signal SIGopcode 		: std_logic_vector (6 downto 0);
 	signal SIGimmSel 		: std_logic;
-	signal SIGrd 			: std_logic_vector (4 downto 0);
+	signal SIGrdID 			: std_logic_vector (4 downto 0);
+	signal SIGrdRF 			: std_logic_vector (4 downto 0);
 	signal SIGrs1 			: std_logic_vector (4 downto 0);
 	signal SIGrs2 			: std_logic_vector (4 downto 0);
 	signal SIGfunct3		: std_logic_vector (2 downto 0);
@@ -265,7 +266,9 @@ begin
 												SIGoffsetPC3 when SIGbranch = '1' else
 												(others => '0');
 	-- register file
-	SIGinputRF 		<= 	SIGoutputDM 	when SIGload = '1' else
+	SIGrdRF		<= 	SIGrdID when (SIGbranch = '0' AND SIGstore = '0') else
+				(others => '0');
+	SIGinputRF 	<= 	SIGoutputDM 	when SIGload = '1' else
 								SIGprogcounter when (SIGjal = '1' OR SIGjalr = '1') else
 								SIGimm32U 		when SIGlui = '1' else
 								std_logic_vector(unsigned(SIGimm32U) + unsigned(SIGprogcounter)) when SIGauipc = '1' else
@@ -315,7 +318,7 @@ begin
 		IDinstruction	=> SIGinstruction,
 		IDopcode			=> SIGopcode,
 		IDimmSel			=> SIGimmSel,
-		IDrd				=> SIGrd,
+		IDrd				=> SIGrdID,
 		IDrs1				=> SIGrs1,
 		IDrs2				=> SIGrs2,
 		IDfunct3			=> SIGfunct3,
@@ -339,7 +342,7 @@ begin
 		RFclock	=> TOPclock,
 		RFreset	=> TOPreset,
 		RFin		=> SIGinputRF,--complex
-		RFrd		=> SIGrd,
+		RFrd		=> SIGrdRF,
 		RFrs1		=> SIGrs1,
 		RFrs2		=> SIGrs2,
 		RFout1	=> SIGoutput1RF,--complex
