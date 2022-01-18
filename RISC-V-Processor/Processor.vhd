@@ -11,50 +11,50 @@ use ieee.numeric_std.all;
 entity Processor is
 	port (
 		-- INPUTS
-		TOPclock			: in std_logic;
-		TOPreset			: in std_logic;
-		TOPinstruction : in std_logic_vector(31 downto 0);
-		TOPoutputDM 	: in std_logic_vector(31 downto 0);
+		PROCclock		: in std_logic;
+		PROCreset		: in std_logic;
+		PROCinstruction: in std_logic_vector(31 downto 0);
+		PROCoutputDM 	: in std_logic_vector(31 downto 0);
 		-- OUTPUTS
-		TOPprogcounter : out std_logic_vector(31 downto 0);
-		TOPstore 		: out std_logic;
-		TOPload 			: out std_logic;
-		TOPfunct3 		: out std_logic_vector(2 downto 0);
-		TOPaddrDM 		: out std_logic_vector(31 downto 0);
-		TOPinputDM 		: out std_logic_vector(31 downto 0);
+		PROCprogcounter: out std_logic_vector(31 downto 0);
+		PROCstore 		: out std_logic;
+		PROCload 		: out std_logic;
+		PROCfunct3 		: out std_logic_vector(2 downto 0);
+		PROCaddrDM 		: out std_logic_vector(31 downto 0);
+		PROCinputDM 	: out std_logic_vector(31 downto 0);
 		-- 32 registers of register file
-		TOPreg00	: inout std_logic_vector(31 downto 0);
-		TOPreg01	: inout std_logic_vector(31 downto 0);
-		TOPreg02	: inout std_logic_vector(31 downto 0);
-		TOPreg03	: inout std_logic_vector(31 downto 0);
-		TOPreg04	: inout std_logic_vector(31 downto 0);
-		TOPreg05	: inout std_logic_vector(31 downto 0);
-		TOPreg06	: inout std_logic_vector(31 downto 0);
-		TOPreg07	: inout std_logic_vector(31 downto 0);
-		TOPreg08	: inout std_logic_vector(31 downto 0);
-		TOPreg09	: inout std_logic_vector(31 downto 0);
-		TOPreg0A	: inout std_logic_vector(31 downto 0);
-		TOPreg0B	: inout std_logic_vector(31 downto 0);
-		TOPreg0C	: inout std_logic_vector(31 downto 0);
-		TOPreg0D	: inout std_logic_vector(31 downto 0);
-		TOPreg0E	: inout std_logic_vector(31 downto 0);
-		TOPreg0F	: inout std_logic_vector(31 downto 0);
-		TOPreg10	: inout std_logic_vector(31 downto 0);
-		TOPreg11	: inout std_logic_vector(31 downto 0);
-		TOPreg12	: inout std_logic_vector(31 downto 0);
-		TOPreg13	: inout std_logic_vector(31 downto 0);
-		TOPreg14	: inout std_logic_vector(31 downto 0);
-		TOPreg15	: inout std_logic_vector(31 downto 0);
-		TOPreg16	: inout std_logic_vector(31 downto 0);
-		TOPreg17	: inout std_logic_vector(31 downto 0);
-		TOPreg18	: inout std_logic_vector(31 downto 0);
-		TOPreg19	: inout std_logic_vector(31 downto 0);
-		TOPreg1A	: inout std_logic_vector(31 downto 0);
-		TOPreg1B	: inout std_logic_vector(31 downto 0);
-		TOPreg1C	: inout std_logic_vector(31 downto 0);
-		TOPreg1D	: inout std_logic_vector(31 downto 0);
-		TOPreg1E	: inout std_logic_vector(31 downto 0);
-		TOPreg1F	: inout std_logic_vector(31 downto 0)
+		PROCreg00	: inout std_logic_vector(31 downto 0);
+		PROCreg01	: inout std_logic_vector(31 downto 0);
+		PROCreg02	: inout std_logic_vector(31 downto 0);
+		PROCreg03	: inout std_logic_vector(31 downto 0);
+		PROCreg04	: inout std_logic_vector(31 downto 0);
+		PROCreg05	: inout std_logic_vector(31 downto 0);
+		PROCreg06	: inout std_logic_vector(31 downto 0);
+		PROCreg07	: inout std_logic_vector(31 downto 0);
+		PROCreg08	: inout std_logic_vector(31 downto 0);
+		PROCreg09	: inout std_logic_vector(31 downto 0);
+		PROCreg0A	: inout std_logic_vector(31 downto 0);
+		PROCreg0B	: inout std_logic_vector(31 downto 0);
+		PROCreg0C	: inout std_logic_vector(31 downto 0);
+		PROCreg0D	: inout std_logic_vector(31 downto 0);
+		PROCreg0E	: inout std_logic_vector(31 downto 0);
+		PROCreg0F	: inout std_logic_vector(31 downto 0);
+		PROCreg10	: inout std_logic_vector(31 downto 0);
+		PROCreg11	: inout std_logic_vector(31 downto 0);
+		PROCreg12	: inout std_logic_vector(31 downto 0);
+		PROCreg13	: inout std_logic_vector(31 downto 0);
+		PROCreg14	: inout std_logic_vector(31 downto 0);
+		PROCreg15	: inout std_logic_vector(31 downto 0);
+		PROCreg16	: inout std_logic_vector(31 downto 0);
+		PROCreg17	: inout std_logic_vector(31 downto 0);
+		PROCreg18	: inout std_logic_vector(31 downto 0);
+		PROCreg19	: inout std_logic_vector(31 downto 0);
+		PROCreg1A	: inout std_logic_vector(31 downto 0);
+		PROCreg1B	: inout std_logic_vector(31 downto 0);
+		PROCreg1C	: inout std_logic_vector(31 downto 0);
+		PROCreg1D	: inout std_logic_vector(31 downto 0);
+		PROCreg1E	: inout std_logic_vector(31 downto 0);
+		PROCreg1F	: inout std_logic_vector(31 downto 0)
 	);
 end entity;
 
@@ -224,7 +224,7 @@ begin
 
 	-- ALL
 	-- program counter
-	TOPprogcounter					<=		SIGprogcounter;
+	PROCprogcounter				<=		SIGprogcounter;
 	SIGoffsetsignPC				<= 	SIGimm21J(20);
 	SIGoffsetPC1 					<= 	SIGimm32U when SIGauipc = '1' else
 												SIGoutputALU when SIGjalr = '1' else
@@ -242,7 +242,7 @@ begin
 	-- register file
 	SIGrdRF		<= 	SIGrdID when (SIGbranch = '0' AND SIGstore = '0') else
 				(others => '0');
-	SIGinputRF 	<= 	TOPoutputDM 	when SIGload = '1' else
+	SIGinputRF 	<= 	PROCoutputDM 	when SIGload = '1' else
 								SIGprogcounter when (SIGjal = '1' OR SIGjalr = '1') else
 								SIGimm32U 		when SIGlui = '1' else
 								std_logic_vector(unsigned(SIGimm32U) + unsigned(SIGprogcounter)) when SIGauipc = '1' else
@@ -259,17 +259,17 @@ begin
 												(others => '1') when (SIGimmSel = '1' OR SIGload = '1' OR SIGstore = '1') AND SIGimm12I(11) = '1' else
 												SIGoutput2RF(31 downto 12);
 	-- data memory
-	TOPaddrDM 		<= 	SIGoutputALU;
-	TOPinputDM 		<= 	SIGoutput2RF;
-	TOPstore 		<= 	SIGstore;
-	TOPload			<= 	SIGload;
-	TOPfunct3		<=		SIGfunct3;
+	PROCaddrDM 		<= 	SIGoutputALU;
+	PROCinputDM 		<= 	SIGoutput2RF;
+	PROCstore 		<= 	SIGstore;
+	PROCload			<= 	SIGload;
+	PROCfunct3		<=		SIGfunct3;
 	
 	-- INSTANCES
 	instPC  : ProgramCounter
 	port map(
-		PCclock 			=> TOPclock,			
-		PCreset 			=> TOPreset,			
+		PCclock 			=> PROCclock,			
+		PCreset 			=> PROCreset,			
 		PCoffset 		=> SIGoffsetPC,--complex			
 		PCoffsetsign 	=> SIGoffsetsignPC,--complex
 		PCjal 			=> SIGjal,				
@@ -284,7 +284,7 @@ begin
 	
 	instID  : InstructionDecoder
 	port map(
-		IDinstruction	=> TOPinstruction,
+		IDinstruction	=> PROCinstruction,
 		IDopcode			=> SIGopcode,
 		IDimmSel			=> SIGimmSel,
 		IDrd				=> SIGrdID,
@@ -308,46 +308,46 @@ begin
 
 	instRF  : RegisterFile 
 	port map(
-		RFclock	=> TOPclock,
-		RFreset	=> TOPreset,
+		RFclock	=> PROCclock,
+		RFreset	=> PROCreset,
 		RFin		=> SIGinputRF,--complex
 		RFrd		=> SIGrdRF,
 		RFrs1		=> SIGrs1,
 		RFrs2		=> SIGrs2,
 		RFout1	=> SIGoutput1RF,--complex
 		RFout2	=> SIGoutput2RF,--complex
-		RFreg00	=> TOPreg00,
-		RFreg01	=> TOPreg01,
-		RFreg02	=> TOPreg02,
-		RFreg03	=> TOPreg03,
-		RFreg04	=> TOPreg04,
-		RFreg05	=> TOPreg05,
-		RFreg06	=> TOPreg06,
-		RFreg07	=> TOPreg07,
-		RFreg08	=> TOPreg08,
-		RFreg09	=> TOPreg09,
-		RFreg0A	=> TOPreg0A,
-		RFreg0B	=> TOPreg0B,
-		RFreg0C	=> TOPreg0C,
-		RFreg0D	=> TOPreg0D,
-		RFreg0E	=> TOPreg0E,
-		RFreg0F	=> TOPreg0F,
-		RFreg10	=> TOPreg10,
-		RFreg11	=> TOPreg11,
-		RFreg12	=> TOPreg12,
-		RFreg13	=> TOPreg13,
-		RFreg14	=> TOPreg14,
-		RFreg15	=> TOPreg15,
-		RFreg16	=> TOPreg16,
-		RFreg17	=> TOPreg17,
-		RFreg18	=> TOPreg18,
-		RFreg19	=> TOPreg19,
-		RFreg1A	=> TOPreg1A,
-		RFreg1B	=> TOPreg1B,
-		RFreg1C	=> TOPreg1C,
-		RFreg1D	=> TOPreg1D,
-		RFreg1E	=> TOPreg1E,
-		RFreg1F	=> TOPreg1F 
+		RFreg00	=> PROCreg00,
+		RFreg01	=> PROCreg01,
+		RFreg02	=> PROCreg02,
+		RFreg03	=> PROCreg03,
+		RFreg04	=> PROCreg04,
+		RFreg05	=> PROCreg05,
+		RFreg06	=> PROCreg06,
+		RFreg07	=> PROCreg07,
+		RFreg08	=> PROCreg08,
+		RFreg09	=> PROCreg09,
+		RFreg0A	=> PROCreg0A,
+		RFreg0B	=> PROCreg0B,
+		RFreg0C	=> PROCreg0C,
+		RFreg0D	=> PROCreg0D,
+		RFreg0E	=> PROCreg0E,
+		RFreg0F	=> PROCreg0F,
+		RFreg10	=> PROCreg10,
+		RFreg11	=> PROCreg11,
+		RFreg12	=> PROCreg12,
+		RFreg13	=> PROCreg13,
+		RFreg14	=> PROCreg14,
+		RFreg15	=> PROCreg15,
+		RFreg16	=> PROCreg16,
+		RFreg17	=> PROCreg17,
+		RFreg18	=> PROCreg18,
+		RFreg19	=> PROCreg19,
+		RFreg1A	=> PROCreg1A,
+		RFreg1B	=> PROCreg1B,
+		RFreg1C	=> PROCreg1C,
+		RFreg1D	=> PROCreg1D,
+		RFreg1E	=> PROCreg1E,
+		RFreg1F	=> PROCreg1F 
 	);
 	
 	instALU : Alu

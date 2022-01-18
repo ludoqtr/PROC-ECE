@@ -25,50 +25,50 @@ architecture archi of Top is
 	component Processor is 
 		port (
 			-- INPUTS
-			TOPclock			: in std_logic;
-			TOPreset			: in std_logic;
-			TOPinstruction : in std_logic_vector(31 downto 0);
-			TOPoutputDM 	: in std_logic_vector(31 downto 0);
+			PROCclock			: in std_logic;
+			PROCreset			: in std_logic;
+			PROCinstruction : in std_logic_vector(31 downto 0);
+			PROCoutputDM 	: in std_logic_vector(31 downto 0);
 			-- OUTPUTS
-			TOPprogcounter : out std_logic_vector(31 downto 0);
-			TOPstore 		: out std_logic;
-			TOPload 			: out std_logic;
-			TOPfunct3 		: out std_logic_vector(2 downto 0);
-			TOPaddrDM 		: out std_logic_vector(31 downto 0);
-			TOPinputDM 		: out std_logic_vector(31 downto 0);
+			PROCprogcounter : out std_logic_vector(31 downto 0);
+			PROCstore 		: out std_logic;
+			PROCload 			: out std_logic;
+			PROCfunct3 		: out std_logic_vector(2 downto 0);
+			PROCaddrDM 		: out std_logic_vector(31 downto 0);
+			PROCinputDM 		: out std_logic_vector(31 downto 0);
 			-- 32 registers of register file
-			TOPreg00	: inout std_logic_vector(31 downto 0);
-			TOPreg01	: inout std_logic_vector(31 downto 0);
-			TOPreg02	: inout std_logic_vector(31 downto 0);
-			TOPreg03	: inout std_logic_vector(31 downto 0);
-			TOPreg04	: inout std_logic_vector(31 downto 0);
-			TOPreg05	: inout std_logic_vector(31 downto 0);
-			TOPreg06	: inout std_logic_vector(31 downto 0);
-			TOPreg07	: inout std_logic_vector(31 downto 0);
-			TOPreg08	: inout std_logic_vector(31 downto 0);
-			TOPreg09	: inout std_logic_vector(31 downto 0);
-			TOPreg0A	: inout std_logic_vector(31 downto 0);
-			TOPreg0B	: inout std_logic_vector(31 downto 0);
-			TOPreg0C	: inout std_logic_vector(31 downto 0);
-			TOPreg0D	: inout std_logic_vector(31 downto 0);
-			TOPreg0E	: inout std_logic_vector(31 downto 0);
-			TOPreg0F	: inout std_logic_vector(31 downto 0);
-			TOPreg10	: inout std_logic_vector(31 downto 0);
-			TOPreg11	: inout std_logic_vector(31 downto 0);
-			TOPreg12	: inout std_logic_vector(31 downto 0);
-			TOPreg13	: inout std_logic_vector(31 downto 0);
-			TOPreg14	: inout std_logic_vector(31 downto 0);
-			TOPreg15	: inout std_logic_vector(31 downto 0);
-			TOPreg16	: inout std_logic_vector(31 downto 0);
-			TOPreg17	: inout std_logic_vector(31 downto 0);
-			TOPreg18	: inout std_logic_vector(31 downto 0);
-			TOPreg19	: inout std_logic_vector(31 downto 0);
-			TOPreg1A	: inout std_logic_vector(31 downto 0);
-			TOPreg1B	: inout std_logic_vector(31 downto 0);
-			TOPreg1C	: inout std_logic_vector(31 downto 0);
-			TOPreg1D	: inout std_logic_vector(31 downto 0);
-			TOPreg1E	: inout std_logic_vector(31 downto 0);
-			TOPreg1F	: inout std_logic_vector(31 downto 0)
+			PROCreg00	: inout std_logic_vector(31 downto 0);
+			PROCreg01	: inout std_logic_vector(31 downto 0);
+			PROCreg02	: inout std_logic_vector(31 downto 0);
+			PROCreg03	: inout std_logic_vector(31 downto 0);
+			PROCreg04	: inout std_logic_vector(31 downto 0);
+			PROCreg05	: inout std_logic_vector(31 downto 0);
+			PROCreg06	: inout std_logic_vector(31 downto 0);
+			PROCreg07	: inout std_logic_vector(31 downto 0);
+			PROCreg08	: inout std_logic_vector(31 downto 0);
+			PROCreg09	: inout std_logic_vector(31 downto 0);
+			PROCreg0A	: inout std_logic_vector(31 downto 0);
+			PROCreg0B	: inout std_logic_vector(31 downto 0);
+			PROCreg0C	: inout std_logic_vector(31 downto 0);
+			PROCreg0D	: inout std_logic_vector(31 downto 0);
+			PROCreg0E	: inout std_logic_vector(31 downto 0);
+			PROCreg0F	: inout std_logic_vector(31 downto 0);
+			PROCreg10	: inout std_logic_vector(31 downto 0);
+			PROCreg11	: inout std_logic_vector(31 downto 0);
+			PROCreg12	: inout std_logic_vector(31 downto 0);
+			PROCreg13	: inout std_logic_vector(31 downto 0);
+			PROCreg14	: inout std_logic_vector(31 downto 0);
+			PROCreg15	: inout std_logic_vector(31 downto 0);
+			PROCreg16	: inout std_logic_vector(31 downto 0);
+			PROCreg17	: inout std_logic_vector(31 downto 0);
+			PROCreg18	: inout std_logic_vector(31 downto 0);
+			PROCreg19	: inout std_logic_vector(31 downto 0);
+			PROCreg1A	: inout std_logic_vector(31 downto 0);
+			PROCreg1B	: inout std_logic_vector(31 downto 0);
+			PROCreg1C	: inout std_logic_vector(31 downto 0);
+			PROCreg1D	: inout std_logic_vector(31 downto 0);
+			PROCreg1E	: inout std_logic_vector(31 downto 0);
+			PROCreg1F	: inout std_logic_vector(31 downto 0)
 		);
 	end component;
 	
@@ -120,17 +120,17 @@ begin
 	-- INSTANCES
 	instPROC : Processor
 	port map(
-		TOPclock			=> TOPclock,
-		TOPreset			=> TOPreset,
-		TOPinstruction => SIGinstruction,
-		TOPoutputDM 	=> SIGoutputDM,
+		PROCclock		=> TOPclock,
+		PROCreset		=> TOPreset,
+		PROCinstruction=> SIGinstruction,
+		PROCoutputDM 	=> SIGoutputDM,
 		-- OUTPUTS
-		TOPprogcounter => SIGprogcounter,
-		TOPstore 		=> SIGstore,
-		TOPload 			=> SIGload,
-		TOPfunct3 		=> SIGfunct3,
-		TOPaddrDM 		=> SIGaddrDM,
-		TOPinputDM 		=> SIGinputDM
+		PROCprogcounter=> SIGprogcounter,
+		PROCstore 		=> SIGstore,
+		PROCload 		=> SIGload,
+		PROCfunct3 		=> SIGfunct3,
+		PROCaddrDM 		=> SIGaddrDM,
+		PROCinputDM 	=> SIGinputDM
 	);
 	
 	instIM  : InstructionMemory
