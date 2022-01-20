@@ -42,6 +42,8 @@ You can simulate each processor block in the "Components-Tests" folder or the en
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
 
+#### FRANÇAIS
+
 En partenariat avec l'entreprise [SECAPEM](https://www.secapem.com), spécialisée dans l'électronique embarquée des systèmes d'entraînement au tir des forces armées terrestres et aériennes, l'objectif du projet est de concevoir sur FPGA un processeur de type d'architecture RISC-V permettant de remplacer le processeur JAP (Java Processor) actuellement utilisé. 
 
 Le projet a aussi pour vocation de concevoir la trame d'un projet dédié aux futurs étudiants ingénieurs en Systèmes Embarqués dans le cadre de l'enseignement de VHDL.
