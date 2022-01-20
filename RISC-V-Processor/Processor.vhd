@@ -284,23 +284,23 @@ begin
 	
 	instID  : InstructionDecoder
 	port map(
-		IDinstruction	=> PROCinstruction,
-		IDopcode			=> SIGopcode,
-		IDimmSel			=> SIGimmSel,
-		IDrd				=> SIGrdID,
-		IDrs1				=> SIGrs1,
-		IDrs2				=> SIGrs2,
-		IDfunct3			=> SIGfunct3,
+		IDinstruction		=> PROCinstruction,
+		IDopcode		=> SIGopcode,
+		IDimmSel		=> SIGimmSel,
+		IDrd			=> SIGrdID,
+		IDrs1			=> SIGrs1,
+		IDrs2			=> SIGrs2,
+		IDfunct3		=> SIGfunct3,
 		IDfunct7 		=> SIGfunct7,
-		IDimm12I			=> SIGimm12I,
-		IDimm12S			=> SIGimm12S,
-		IDimm13B			=> SIGimm13B,
-		IDimm32U			=> SIGimm32U,
-		IDimm21J			=> SIGimm21J,
+		IDimm12I		=> SIGimm12I,
+		IDimm12S		=> SIGimm12S,
+		IDimm13B		=> SIGimm13B,
+		IDimm32U		=> SIGimm32U,
+		IDimm21J		=> SIGimm21J,
 		IDload 			=> SIGload,
-		IDstore 			=> SIGstore,
+		IDstore 		=> SIGstore,
 		IDlui 			=> SIGlui,
-		IDauipc 			=> SIGauipc,
+		IDauipc 		=> SIGauipc,
 		IDjal 			=> SIGjal,
 		IDjalr 			=> SIGjalr,
 		IDbranch 		=> SIGbranch
@@ -310,10 +310,10 @@ begin
 	port map(
 		RFclock	=> PROCclock,
 		RFreset	=> PROCreset,
-		RFin		=> SIGinputRF,--complex
-		RFrd		=> SIGrdRF,
-		RFrs1		=> SIGrs1,
-		RFrs2		=> SIGrs2,
+		RFin	=> SIGinputRF,--complex
+		RFrd	=> SIGrdRF,
+		RFrs1	=> SIGrs1,
+		RFrs2	=> SIGrs2,
 		RFout1	=> SIGoutput1RF,--complex
 		RFout2	=> SIGoutput2RF,--complex
 		RFreg00	=> PROCreg00,
