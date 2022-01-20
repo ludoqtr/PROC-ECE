@@ -14,6 +14,7 @@ entity Top is
 		TOPclock		: in std_logic;
 		TOPreset		: in std_logic;
 		TOPresetIM	: in std_logic
+		-- MUST ADD 7SEG REGISTERS AND LEDS FOR DEMO
 	);
 end entity;
 
