@@ -18,6 +18,9 @@ end entity;
 -- ARCHITECTURE
 architecture archi of Affichage7 is
 begin
+-- segments order for a 7seg display is "top/topright/bottomright/bottom/bottomleft/topleft/middle/dotpoint"
+-- '0' = led on
+-- '1' = led off
 		display <=	"00000011" when hexadigit = "000000" else -- code du "0"
 				"10011111" when hexadigit = "000001" else -- code du "1"
 			  	"00100101" when hexadigit = "000010" else -- code du "2"
