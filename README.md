@@ -1,4 +1,4 @@
-# PROC-ECE Projet
+# PROC-ECE Project
 
 <p align="center"><img width="300" src="https://user-images.githubusercontent.com/47628329/149769925-e40ed092-13f5-4d9f-af7d-b45a13ee76e4.png"></p>
 
