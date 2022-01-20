@@ -57,9 +57,9 @@ begin
 	-- sra
 	ALUsra <= to_stdlogicvector(to_bitvector(ALUin1) sra ALUin2int);
 	-- slt signed and unsigned
-	ALUslt <= 		"00000000000000000000000000000001" when ((unsigned(ALUIn1) < unsigned(ALUIn2)) AND ALUfunct3 = "011")
-				 else "00000000000000000000000000000001" when ((signed(ALUIn1) < signed(ALUIn2)) AND ALUfunct3 = "010")
-				 else (others => '0');
+	ALUslt <= 	"00000000000000000000000000000001" when ((unsigned(ALUIn1) < unsigned(ALUIn2)) AND ALUfunct3 = "011")
+			else "00000000000000000000000000000001" when ((signed(ALUIn1) < signed(ALUIn2)) AND ALUfunct3 = "010")
+			else (others => '0');
 	-- and
 	ALUand <= ALUin1 AND ALUin2;
 	-- or
@@ -69,14 +69,14 @@ begin
 	
 	-- outputs
 	ALUout <= 	  ALUsum when (ALUfunct3(2 downto 0) = "000" and ALUfunct7 = '0')		-- ADD
-				else ALUsub when (ALUfunct3(2 downto 0) = "000" and ALUfunct7 = '1')		-- SUB
-				else ALUsll when (ALUfunct3(2 downto 0) = "001") 								-- SLL															
-				else ALUslt when (ALUfunct3(2 downto 1) = "01") 								-- SLT
-				else ALUxor when (ALUfunct3(2 downto 0) = "100")								-- XOR
+				else ALUsub when (ALUfunct3(2 downto 0) = "000" and ALUfunct7 = '1')	-- SUB
+				else ALUsll when (ALUfunct3(2 downto 0) = "001") 			-- SLL															
+				else ALUslt when (ALUfunct3(2 downto 1) = "01") 			-- SLT
+				else ALUxor when (ALUfunct3(2 downto 0) = "100")			-- XOR
 				else ALUsrl when (ALUfunct3(2 downto 0) = "101" and ALUfunct7 = '0') 	-- SRL
 				else ALUsra when (ALUfunct3(2 downto 0) = "101" and ALUfunct7 = '1') 	-- SRA
-				else ALUor  when (ALUfunct3(2 downto 0) = "110") 								-- OR
-				else ALUand when (ALUfunct3(2 downto 0) = "111") 								-- AND
+				else ALUor  when (ALUfunct3(2 downto 0) = "110") 			-- OR
+				else ALUand when (ALUfunct3(2 downto 0) = "111") 			-- AND
 				else (others =>'0');
 	
 	ALUSup <= '1' when (unsigned(ALUIn1) > unsigned(ALUIn2)) else '0';
