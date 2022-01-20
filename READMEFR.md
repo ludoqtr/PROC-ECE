@@ -1,3 +1,7 @@
+# Projet PROC-ECE
+
+<p align="center"><img width="300" src="https://user-images.githubusercontent.com/47628329/149769925-e40ed092-13f5-4d9f-af7d-b45a13ee76e4.png"></p>
+
 En partenariat avec l'entreprise [SECAPEM](https://www.secapem.com), spécialisée dans l'électronique embarquée des systèmes d'entraînement au tir des forces armées terrestres et aériennes, l'objectif du projet est de concevoir sur FPGA un processeur de type d'architecture RISC-V permettant de remplacer le processeur JAP (Java Processor) actuellement utilisé. 
 
 Le projet a aussi pour vocation de concevoir la trame d'un projet dédié aux futurs étudiants ingénieurs en Systèmes Embarqués dans le cadre de l'enseignement de VHDL.
