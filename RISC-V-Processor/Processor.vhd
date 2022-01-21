@@ -126,38 +126,38 @@ architecture archi of Processor is
 			RFout1	: out std_logic_vector(31 downto 0);
 			RFout2	: out std_logic_vector(31 downto 0);
 			-- 32 registers of register file
-			RFreg00	: out std_logic_vector(31 downto 0);
-			RFreg01	: out std_logic_vector(31 downto 0);
-			RFreg02	: out std_logic_vector(31 downto 0);
-			RFreg03	: out std_logic_vector(31 downto 0);
-			RFreg04	: out std_logic_vector(31 downto 0);
-			RFreg05	: out std_logic_vector(31 downto 0);
-			RFreg06	: out std_logic_vector(31 downto 0);
-			RFreg07	: out std_logic_vector(31 downto 0);
-			RFreg08	: out std_logic_vector(31 downto 0);
-			RFreg09	: out std_logic_vector(31 downto 0);
-			RFreg0A	: out std_logic_vector(31 downto 0);
-			RFreg0B	: out std_logic_vector(31 downto 0);
-			RFreg0C	: out std_logic_vector(31 downto 0);
-			RFreg0D	: out std_logic_vector(31 downto 0);
-			RFreg0E	: out std_logic_vector(31 downto 0);
-			RFreg0F	: out std_logic_vector(31 downto 0);
-			RFreg10	: out std_logic_vector(31 downto 0);
-			RFreg11	: out std_logic_vector(31 downto 0);
-			RFreg12	: out std_logic_vector(31 downto 0);
-			RFreg13	: out std_logic_vector(31 downto 0);
-			RFreg14	: out std_logic_vector(31 downto 0);
-			RFreg15	: out std_logic_vector(31 downto 0);
-			RFreg16	: out std_logic_vector(31 downto 0);
-			RFreg17	: out std_logic_vector(31 downto 0);
-			RFreg18	: out std_logic_vector(31 downto 0);
-			RFreg19	: out std_logic_vector(31 downto 0);
-			RFreg1A	: out std_logic_vector(31 downto 0);
-			RFreg1B	: out std_logic_vector(31 downto 0);
-			RFreg1C	: out std_logic_vector(31 downto 0);
-			RFreg1D	: out std_logic_vector(31 downto 0);
-			RFreg1E	: out std_logic_vector(31 downto 0);
-			RFreg1F	: out std_logic_vector(31 downto 0)
+			RFreg00	: inout std_logic_vector(31 downto 0);
+			RFreg01	: inout std_logic_vector(31 downto 0);
+			RFreg02	: inout std_logic_vector(31 downto 0);
+			RFreg03	: inout std_logic_vector(31 downto 0);
+			RFreg04	: inout std_logic_vector(31 downto 0);
+			RFreg05	: inout std_logic_vector(31 downto 0);
+			RFreg06	: inout std_logic_vector(31 downto 0);
+			RFreg07	: inout std_logic_vector(31 downto 0);
+			RFreg08	: inout std_logic_vector(31 downto 0);
+			RFreg09	: inout std_logic_vector(31 downto 0);
+			RFreg0A	: inout std_logic_vector(31 downto 0);
+			RFreg0B	: inout std_logic_vector(31 downto 0);
+			RFreg0C	: inout std_logic_vector(31 downto 0);
+			RFreg0D	: inout std_logic_vector(31 downto 0);
+			RFreg0E	: inout std_logic_vector(31 downto 0);
+			RFreg0F	: inout std_logic_vector(31 downto 0);
+			RFreg10	: inout std_logic_vector(31 downto 0);
+			RFreg11	: inout std_logic_vector(31 downto 0);
+			RFreg12	: inout std_logic_vector(31 downto 0);
+			RFreg13	: inout std_logic_vector(31 downto 0);
+			RFreg14	: inout std_logic_vector(31 downto 0);
+			RFreg15	: inout std_logic_vector(31 downto 0);
+			RFreg16	: inout std_logic_vector(31 downto 0);
+			RFreg17	: inout std_logic_vector(31 downto 0);
+			RFreg18	: inout std_logic_vector(31 downto 0);
+			RFreg19	: inout std_logic_vector(31 downto 0);
+			RFreg1A	: inout std_logic_vector(31 downto 0);
+			RFreg1B	: inout std_logic_vector(31 downto 0);
+			RFreg1C	: inout std_logic_vector(31 downto 0);
+			RFreg1D	: inout std_logic_vector(31 downto 0);
+			RFreg1E	: inout std_logic_vector(31 downto 0);
+			RFreg1F	: inout std_logic_vector(31 downto 0)
 		);
 	end component;
 	
@@ -215,6 +215,7 @@ architecture archi of Processor is
 	signal SIGinput2ALU	: std_logic_vector (31 downto 0);
 	signal SIGoutputALU	: std_logic_vector (31 downto 0);
 	signal SIGfunct3ALU	: std_logic_vector (2 downto 0);
+	signal SIGfunct7ALU	: std_logic;
 	signal SIGeqALU		: std_logic;
 	signal SIGinfALU		: std_logic;
 	signal SIGsupALU		: std_logic;
@@ -224,11 +225,11 @@ begin
 
 	-- ALL
 	-- program counter
-	PROCprogcounter				<=		SIGprogcounter;
+	PROCprogcounter				<=	SIGprogcounter;
 	SIGoffsetsignPC				<= 	SIGimm21J(20);
-	SIGoffsetPC1 					<= 	SIGimm32U when SIGauipc = '1' else
-												SIGoutputALU when SIGjalr = '1' else
-												(others => '0');
+	SIGoffsetPC1 				<= 	SIGimm32U when SIGauipc = '1' else
+							SIGoutputALU when SIGjalr = '1' else
+							(others => '0');
 	SIGoffsetPC2(20 downto 0) 	<= 	SIGimm21J;
 	SIGoffsetPC2(31 downto 21) 	<= (others => '1') when SIGoffsetsignPC = '1' else
 												(others => '0');
@@ -242,22 +243,29 @@ begin
 	-- register file
 	SIGrdRF		<= 	SIGrdID when (SIGbranch = '0' AND SIGstore = '0') else
 				(others => '0');
-	SIGinputRF 	<= 	PROCoutputDM 	when SIGload = '1' else
-								SIGprogcounter when (SIGjal = '1' OR SIGjalr = '1') else
-								SIGimm32U 		when SIGlui = '1' else
+	SIGinputRF 	<= 	PROCoutputDM when SIGload = '1' else
+				std_logic_vector(unsigned(SIGprogcounter)+4) when (SIGjal = '1' OR SIGjalr = '1') else
+				SIGimm32U 		when SIGlui = '1' else
 								std_logic_vector(unsigned(SIGimm32U) + unsigned(SIGprogcounter)) when SIGauipc = '1' else
 								SIGoutputALU 	when SIGstore = '0' else
 								(others => '0');
 	-- alu
-	SIGfunct3ALU 	<=		"000" when (SIGstore = '1' OR SIGload = '1') else
-								SIGfunct3;
+	SIGfunct7ALU	<=	'0' when ((SIGfunct3ALU = "000" OR SIGfunct3ALU = "010" OR SIGfunct3ALU = "011" OR SIGfunct3ALU = "100" OR SIGfunct3ALU = "110" OR SIGfunct3ALU = "111") AND (SIGimmSel = '1' OR SIGload = '1' OR SIGstore = '1')) else
+				SIGfunct7;
+	SIGfunct3ALU 	<=	"000" when (SIGstore = '1' OR SIGload = '1') else
+				SIGfunct3;
 	SIGinput1ALU 	<= 	SIGoutput1RF;
-	SIGinput2ALU(11 downto 0) 	<= 	SIGimm12S(11 downto 0) when SIGstore = '1' else
-												SIGimm12I(11 downto 0) when (SIGload = '1' OR SIGimmSel = '1' OR SIGjalr = '1') else
-												SIGoutput2RF(11 downto 0);
-	SIGinput2ALU(31 downto 12) <= 	(others => '0') when (SIGimmSel = '1' OR SIGload = '1' OR SIGstore = '1') AND SIGimm12I(11) = '0' else
-												(others => '1') when (SIGimmSel = '1' OR SIGload = '1' OR SIGstore = '1') AND SIGimm12I(11) = '1' else
-												SIGoutput2RF(31 downto 12);
+	
+	SIGinput2ALU(11 downto 0) <= 
+	SIGimm12S(11 downto 0) when SIGstore = '1' else
+	SIGimm12I(11 downto 0) when (SIGload = '1' OR SIGimmSel = '1' OR SIGjalr = '1') else
+	SIGoutput2RF(11 downto 0);
+	
+	SIGinput2ALU(31 downto 12) <= 	
+	(others => '0') when (SIGimmSel = '1' OR SIGload = '1' OR SIGstore = '1') AND SIGimm12I(11) = '0' else
+	(others => '1') when (SIGimmSel = '1' OR SIGload = '1' OR SIGstore = '1') AND SIGimm12I(11) = '1' else
+	SIGoutput2RF(31 downto 12);
+	
 	-- data memory
 	PROCaddrDM 		<= 	SIGoutputALU;
 	PROCinputDM 		<= 	SIGoutput2RF;
@@ -284,23 +292,23 @@ begin
 	
 	instID  : InstructionDecoder
 	port map(
-		IDinstruction		=> PROCinstruction,
-		IDopcode		=> SIGopcode,
-		IDimmSel		=> SIGimmSel,
-		IDrd			=> SIGrdID,
-		IDrs1			=> SIGrs1,
-		IDrs2			=> SIGrs2,
-		IDfunct3		=> SIGfunct3,
+		IDinstruction	=> PROCinstruction,
+		IDopcode			=> SIGopcode,
+		IDimmSel			=> SIGimmSel,
+		IDrd				=> SIGrdID,
+		IDrs1				=> SIGrs1,
+		IDrs2				=> SIGrs2,
+		IDfunct3			=> SIGfunct3,
 		IDfunct7 		=> SIGfunct7,
-		IDimm12I		=> SIGimm12I,
-		IDimm12S		=> SIGimm12S,
-		IDimm13B		=> SIGimm13B,
-		IDimm32U		=> SIGimm32U,
-		IDimm21J		=> SIGimm21J,
+		IDimm12I			=> SIGimm12I,
+		IDimm12S			=> SIGimm12S,
+		IDimm13B			=> SIGimm13B,
+		IDimm32U			=> SIGimm32U,
+		IDimm21J			=> SIGimm21J,
 		IDload 			=> SIGload,
-		IDstore 		=> SIGstore,
+		IDstore 			=> SIGstore,
 		IDlui 			=> SIGlui,
-		IDauipc 		=> SIGauipc,
+		IDauipc 			=> SIGauipc,
 		IDjal 			=> SIGjal,
 		IDjalr 			=> SIGjalr,
 		IDbranch 		=> SIGbranch
@@ -310,10 +318,10 @@ begin
 	port map(
 		RFclock	=> PROCclock,
 		RFreset	=> PROCreset,
-		RFin	=> SIGinputRF,--complex
-		RFrd	=> SIGrdRF,
-		RFrs1	=> SIGrs1,
-		RFrs2	=> SIGrs2,
+		RFin		=> SIGinputRF,--complex
+		RFrd		=> SIGrdRF,
+		RFrs1		=> SIGrs1,
+		RFrs2		=> SIGrs2,
 		RFout1	=> SIGoutput1RF,--complex
 		RFout2	=> SIGoutput2RF,--complex
 		RFreg00	=> PROCreg00,
@@ -354,7 +362,7 @@ begin
 	port map(
 		ALUin1 		=> SIGinput1ALU,--complex
 		ALUin2 		=> SIGinput2ALU,--complex
-		ALUfunct7 	=> SIGfunct7,
+		ALUfunct7 	=> SIGfunct7ALU,--chiant
 		ALUfunct3	=> SIGfunct3ALU,
 		ALUout 		=> SIGoutputALU,--complex
 		ALUsup 		=> SIGsupALU,
