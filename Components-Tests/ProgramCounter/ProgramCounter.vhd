@@ -61,8 +61,9 @@ begin
 						else PCoffset;
 	
 	-- adder
-	SigOffSum <= std_logic_vector(unsigned(PCprogcounter) + unsigned(SigMux1Out));
-	SigOffSub <= std_logic_vector(unsigned(PCprogcounter) - unsigned(SigMux1Out));
+	SigOffSum <= 	std_logic_vector(unsigned(PCprogcounter) + unsigned(SigMux1Out));
+	SigOffSub <= 	PCoffset when PCjalr = '1' else
+			std_logic_vector(unsigned(PCprogcounter) - unsigned(SigMux1Out));
 	
 	-- mux 2
 	SigMux2Sel <= 	SigMux1Sel AND PCoffsetsign;
