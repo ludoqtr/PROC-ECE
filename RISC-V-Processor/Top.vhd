@@ -13,8 +13,11 @@ entity Top is
 		-- INPUTS
 		TOPclock		: in std_logic;
 		TOPreset		: in std_logic;
-		TOPresetIM	: in std_logic
-		-- MUST ADD 7SEG REGISTERS AND LEDS FOR DEMO
+		TOPresetIM	: in std_logic;
+		TOPresetAT : in std_logic;
+		-- DEMO OUTPUTS
+		disp0, disp1, disp2, disp3, disp4, disp5 : out std_logic_vector(0 to 7);
+		displed : out std_logic_vector(0 to 9)
 	);
 end entity;
 
@@ -101,6 +104,14 @@ architecture archi of Top is
 		);
 	end component;
 	
+	component AffichageText is
+	port (
+			ATclock : in std_logic;
+			ATreset : in std_logic;
+			disp0, disp1, disp2, disp3, disp4, disp5 : out std_logic_vector(7 downto 0)
+		);
+	end component;
+
 	-- SIGNALS
 	-- instruction memory
 	signal SIGprogcounter: std_logic_vector (31 downto 0);
@@ -154,6 +165,18 @@ begin
 		DMout			=> SIGoutputDM--complex
 	);
 	
+	-- affichage text
+	instAffichTxt : AffichageText 
+	port map(
+		ATclock => TOPclock,
+		ATreset => TOPresetAT, 
+		disp0 => disp0,
+		disp1 => disp1,
+		disp2 => disp2,
+		disp3 => disp3,
+		disp4 => disp4,
+		disp5 => disp5
+	);
 	-- END
 end archi;
 -- END FILE
