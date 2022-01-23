@@ -230,22 +230,22 @@ begin
 	SIGoffsetPC1 				<= 	SIGimm32U when SIGauipc = '1' else
 							SIGoutputALU when SIGjalr = '1' else
 							(others => '0');
-	SIGoffsetPC2(20 downto 0) 	<= 	SIGimm21J;
-	SIGoffsetPC2(31 downto 21) 	<= (others => '1') when SIGoffsetsignPC = '1' else
-												(others => '0');
-	SIGoffsetPC3(12 downto 0)	<=		SIGimm13B;
-	SIGoffsetPC3(31 downto 13)	<=		(others => '1') when SIGoffsetsignPC = '1' else
-												(others => '0');
-	SIGoffsetPC						<=		SIGoffsetPC1 when SIGauipc = '1' OR SIGjalr = '1' else
-												SIGoffsetPC2 when SIGjal = '1' else
-												SIGoffsetPC3 when SIGbranch = '1' else
-												(others => '0');
+	SIGoffsetPC2(20 downto 0) <= 	SIGimm21J;
+	SIGoffsetPC2(31 downto 21) <= 	(others => '1') when SIGoffsetsignPC = '1' else
+					(others => '0');
+	SIGoffsetPC3(12 downto 0)<=	SIGimm13B;
+	SIGoffsetPC3(31 downto 13)<=	(others => '1') when SIGoffsetsignPC = '1' else
+					(others => '0');
+	SIGoffsetPC		<=	SIGoffsetPC1 when SIGauipc = '1' OR SIGjalr = '1' else
+					SIGoffsetPC2 when SIGjal = '1' else
+					SIGoffsetPC3 when SIGbranch = '1' else
+					(others => '0');
 	-- register file
 	SIGrdRF		<= 	SIGrdID when (SIGbranch = '0' AND SIGstore = '0') else
 				(others => '0');
 	SIGinputRF 	<= 	PROCoutputDM when SIGload = '1' else
 				std_logic_vector(unsigned(SIGprogcounter)+4) when (SIGjal = '1' OR SIGjalr = '1') else
-				SIGimm32U 		when SIGlui = '1' else
+				SIGimm32U when SIGlui = '1' else
 								std_logic_vector(unsigned(SIGimm32U) + unsigned(SIGprogcounter)) when SIGauipc = '1' else
 								SIGoutputALU 	when SIGstore = '0' else
 								(others => '0');

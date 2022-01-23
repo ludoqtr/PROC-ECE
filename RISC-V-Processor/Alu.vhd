@@ -70,7 +70,7 @@ begin
 	-- outputs
 	ALUout <= 	  ALUsum when (ALUfunct3(2 downto 0) = "000" and ALUfunct7 = '0')		-- ADD
 				else ALUsub when (ALUfunct3(2 downto 0) = "000" and ALUfunct7 = '1')	-- SUB
-				else ALUsll when (ALUfunct3(2 downto 0) = "001") 			-- SLL															
+				else ALUsll when (ALUfunct3(2 downto 0) = "001") 			-- SLL	
 				else ALUslt when (ALUfunct3(2 downto 1) = "01") 			-- SLT
 				else ALUxor when (ALUfunct3(2 downto 0) = "100")			-- XOR
 				else ALUsrl when (ALUfunct3(2 downto 0) = "101" and ALUfunct7 = '0') 	-- SRL
