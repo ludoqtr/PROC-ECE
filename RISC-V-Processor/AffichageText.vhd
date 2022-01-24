@@ -35,9 +35,9 @@ signal SIGclockoutCPT : std_logic;
 
 begin
 
-p0 : process(SIGclockoutCPT, resetAT)
+p0 : process(SIGclockoutCPT, ATreset)
 begin
-	if resetAT ='1' or SIGoutputcptAT > "101000" then
+	if ATreset ='1' or SIGoutputcptAT > "101000" then
 		SIGoutputcptAT <= (others =>'0');
 	else
 		if rising_edge(SIGclockoutCPT) then
@@ -268,7 +268,7 @@ i1 : Compteur7seg
 port map(
 	CPTclock => ATclock, 
 	CPTreset => ATreset, 
-	CPTclockout => SIGnewclkAT
+	CPTclockout => SIGclockoutCPT
 );
 
 end archi;

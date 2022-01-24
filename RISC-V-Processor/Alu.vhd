@@ -17,9 +17,9 @@ entity Alu is
 		ALUfunct3 	: in std_logic_vector (2 downto 0);
 		-- OUTPUTS
 		ALUout 		: out std_logic_vector (31 downto 0);
-		ALUsup 		: out std_logic;
 		ALUeq 		: out std_logic;
 		ALUinf 		: out std_logic;
+		ALUsup 		: out std_logic;
 		ALUinfU		: out std_logic;
 		ALUsupU		: out std_logic
 	);

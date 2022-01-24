@@ -25,7 +25,7 @@ end entity;
 
 -- ARCHITECTURE
 architecture archi of DataMemory is
-	type mem is array(0 to 255) of std_logic_vector(7 downto 0);
+	type mem is array(0 to 4096) of std_logic_vector(7 downto 0);
 	signal SigDMmemory : mem;
 	signal SigDMaddr00 : integer;
 	signal SigDMaddr08 : integer;

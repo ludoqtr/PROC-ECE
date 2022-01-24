@@ -374,7 +374,6 @@ begin
 		ALUfunct7 	=> SIGfunct7ALU,--chiant
 		ALUfunct3	=> SIGfunct3ALU,
 		ALUout 		=> SIGoutputALU,--complex
-		ALUsup 		=> SIGsupALU,
 		ALUeq 		=> SIGeqALU,
 		ALUinf 		=> SIGinfALU,
 		ALUsup		=> SIGsupALU,
