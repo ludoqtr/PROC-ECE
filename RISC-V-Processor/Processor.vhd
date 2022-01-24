@@ -77,7 +77,9 @@ architecture archi of Processor is
 			PCauipc			: in std_logic;
 			PCalueq			: in std_logic;
 			PCaluinf			: in std_logic;
-			--PCalusup			: in std_logic;
+			PCalusup			: in std_logic;
+			PCaluinfU			: in std_logic;
+			PCalusupU			: in std_logic;
 			-- OUTPUTS
 			PCprogcounter	: inout std_logic_vector(31 downto 0)
 		);
@@ -173,7 +175,9 @@ architecture archi of Processor is
 			ALUout 		: out std_logic_vector (31 downto 0);
 			ALUsup 		: out std_logic;
 			ALUeq 		: out std_logic;
-			ALUinf 		: out std_logic
+			ALUinf 		: out std_logic;
+			ALUinfU		: out std_logic;
+			ALUsupU		: out std_logic
 		);
 	end component;
 	
@@ -219,6 +223,8 @@ architecture archi of Processor is
 	signal SIGeqALU		: std_logic;
 	signal SIGinfALU		: std_logic;
 	signal SIGsupALU		: std_logic;
+	signal SIGinfUALU		: std_logic;
+	signal SIGsupUALU		: std_logic;
 	
 begin
 	-- BEGIN
@@ -286,7 +292,10 @@ begin
 		PCfunct3 		=> SIGfunct3,			
 		PCauipc 			=> SIGauipc,			
 		PCalueq 			=> SIGeqALU,			
-		PCaluinf 		=> SIGinfALU,			
+		PCaluinf 		=> SIGinfALU,
+		PCalusup		=> SIGsupALU,
+		PCaluinfU		=> SIGinfUALU,
+		PCalusupU		=> SIGsupUALU,			
 		PCprogcounter 	=> SIGprogcounter
 	);
 	
@@ -367,7 +376,10 @@ begin
 		ALUout 		=> SIGoutputALU,--complex
 		ALUsup 		=> SIGsupALU,
 		ALUeq 		=> SIGeqALU,
-		ALUinf 		=> SIGinfALU
+		ALUinf 		=> SIGinfALU,
+		ALUsup		=> SIGsupALU,
+		ALUinfU		=> SIGinfUALU,
+		ALUsupU		=> SIGsupUALU
 	);
 	
 	-- END
