@@ -42,7 +42,7 @@ set_global_assignment -name DEVICE 10M50DAF484C7G
 set_global_assignment -name TOP_LEVEL_ENTITY Top
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:16:02  JANUARY 04, 2022"
-set_global_assignment -name LAST_QUARTUS_VERSION "20.1.1 Lite Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "21.1.0 Lite Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
@@ -50,7 +50,7 @@ set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
 set_global_assignment -name EDA_DESIGN_ENTRY_SYNTHESIS_TOOL "Synplify Pro"
 set_global_assignment -name EDA_LMF_FILE synplcty.lmf -section_id eda_design_synthesis
 set_global_assignment -name EDA_INPUT_DATA_FORMAT VQM -section_id eda_design_synthesis
-set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
+set_global_assignment -name EDA_SIMULATION_TOOL "Questa Intel FPGA (VHDL)"
 set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_timing
@@ -65,71 +65,6 @@ set_global_assignment -name EDA_TEST_BENCH_NAME TestBench -section_id eda_simula
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id TestBench
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME TestBench -section_id TestBench
 set_global_assignment -name EDA_TEST_BENCH_FILE TestBench.vhd -section_id TestBench
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_location_assignment PIN_C14 -to disp0[0]
-set_location_assignment PIN_E15 -to disp0[1]
-set_location_assignment PIN_C15 -to disp0[2]
-set_location_assignment PIN_C16 -to disp0[3]
-set_location_assignment PIN_E16 -to disp0[4]
-set_location_assignment PIN_D17 -to disp0[5]
-set_location_assignment PIN_C17 -to disp0[6]
-set_location_assignment PIN_D15 -to disp0[7]
-set_location_assignment PIN_C18 -to disp1[0]
-set_location_assignment PIN_D18 -to disp1[1]
-set_location_assignment PIN_E18 -to disp1[2]
-set_location_assignment PIN_B16 -to disp1[3]
-set_location_assignment PIN_A17 -to disp1[4]
-set_location_assignment PIN_A18 -to disp1[5]
-set_location_assignment PIN_B17 -to disp1[6]
-set_location_assignment PIN_A16 -to disp1[7]
-set_location_assignment PIN_B20 -to disp2[0]
-set_location_assignment PIN_A20 -to disp2[1]
-set_location_assignment PIN_B19 -to disp2[2]
-set_location_assignment PIN_A21 -to disp2[3]
-set_location_assignment PIN_B21 -to disp2[4]
-set_location_assignment PIN_C22 -to disp2[5]
-set_location_assignment PIN_B22 -to disp2[6]
-set_location_assignment PIN_A19 -to disp2[7]
-set_location_assignment PIN_F21 -to disp3[0]
-set_location_assignment PIN_E22 -to disp3[1]
-set_location_assignment PIN_E21 -to disp3[2]
-set_location_assignment PIN_C19 -to disp3[3]
-set_location_assignment PIN_C20 -to disp3[4]
-set_location_assignment PIN_D19 -to disp3[5]
-set_location_assignment PIN_E17 -to disp3[6]
-set_location_assignment PIN_D22 -to disp3[7]
-set_location_assignment PIN_F18 -to disp4[0]
-set_location_assignment PIN_E20 -to disp4[1]
-set_location_assignment PIN_E19 -to disp4[2]
-set_location_assignment PIN_J18 -to disp4[3]
-set_location_assignment PIN_H19 -to disp4[4]
-set_location_assignment PIN_F19 -to disp4[5]
-set_location_assignment PIN_F20 -to disp4[6]
-set_location_assignment PIN_F17 -to disp4[7]
-set_location_assignment PIN_J20 -to disp5[0]
-set_location_assignment PIN_K20 -to disp5[1]
-set_location_assignment PIN_L18 -to disp5[2]
-set_location_assignment PIN_N18 -to disp5[3]
-set_location_assignment PIN_M20 -to disp5[4]
-set_location_assignment PIN_N19 -to disp5[5]
-set_location_assignment PIN_N20 -to disp5[6]
-set_location_assignment PIN_L19 -to disp5[7]
-set_location_assignment PIN_P11 -to TOPclock
-set_location_assignment PIN_C10 -to TOPreset
-set_location_assignment PIN_C11 -to TOPresetIM
-set_location_assignment PIN_A8 -to displed[0]
-set_location_assignment PIN_A9 -to displed[1]
-set_location_assignment PIN_A10 -to displed[2]
-set_location_assignment PIN_B10 -to displed[3]
-set_location_assignment PIN_D13 -to displed[4]
-set_location_assignment PIN_C13 -to displed[5]
-set_location_assignment PIN_E14 -to displed[6]
-set_location_assignment PIN_D14 -to displed[7]
-set_location_assignment PIN_A11 -to displed[8]
-set_location_assignment PIN_B11 -to displed[9]
-set_global_assignment -name VHDL_FILE Affichage7.vhd
 set_global_assignment -name VHDL_FILE Top.vhd
 set_global_assignment -name VHDL_FILE RegisterFile.vhd
 set_global_assignment -name VHDL_FILE ProgramCounter.vhd
@@ -138,7 +73,70 @@ set_global_assignment -name VHDL_FILE InstructionMemory.vhd
 set_global_assignment -name VHDL_FILE InstructionDecoder.vhd
 set_global_assignment -name VHDL_FILE DataMemory.vhd
 set_global_assignment -name VHDL_FILE Alu.vhd
-set_global_assignment -name VHDL_FILE Compteur7seg.vhd
-set_global_assignment -name VHDL_FILE AffichageText.vhd
-set_location_assignment PIN_D12 -to TOPresetAT
+set_global_assignment -name VHDL_FILE ../../PFE/Affichage7.vhd
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_C14 -to TOPdisplay1[0]
+set_location_assignment PIN_E15 -to TOPdisplay1[1]
+set_location_assignment PIN_C15 -to TOPdisplay1[2]
+set_location_assignment PIN_C16 -to TOPdisplay1[3]
+set_location_assignment PIN_E16 -to TOPdisplay1[4]
+set_location_assignment PIN_D17 -to TOPdisplay1[5]
+set_location_assignment PIN_C17 -to TOPdisplay1[6]
+set_location_assignment PIN_D15 -to TOPdisplay1[7]
+set_location_assignment PIN_C18 -to TOPdisplay1[8]
+set_location_assignment PIN_D18 -to TOPdisplay1[9]
+set_location_assignment PIN_E18 -to TOPdisplay1[10]
+set_location_assignment PIN_B16 -to TOPdisplay1[11]
+set_location_assignment PIN_A17 -to TOPdisplay1[12]
+set_location_assignment PIN_A18 -to TOPdisplay1[13]
+set_location_assignment PIN_B17 -to TOPdisplay1[14]
+set_location_assignment PIN_A16 -to TOPdisplay1[15]
+set_location_assignment PIN_B20 -to TOPdisplay1[16]
+set_location_assignment PIN_A20 -to TOPdisplay1[17]
+set_location_assignment PIN_B19 -to TOPdisplay1[18]
+set_location_assignment PIN_A21 -to TOPdisplay1[19]
+set_location_assignment PIN_B21 -to TOPdisplay1[20]
+set_location_assignment PIN_C22 -to TOPdisplay1[21]
+set_location_assignment PIN_B22 -to TOPdisplay1[22]
+set_location_assignment PIN_A19 -to TOPdisplay1[23]
+set_location_assignment PIN_F21 -to TOPdisplay1[24]
+set_location_assignment PIN_E22 -to TOPdisplay1[25]
+set_location_assignment PIN_E21 -to TOPdisplay1[26]
+set_location_assignment PIN_C19 -to TOPdisplay1[27]
+set_location_assignment PIN_C20 -to TOPdisplay1[28]
+set_location_assignment PIN_D19 -to TOPdisplay1[29]
+set_location_assignment PIN_E17 -to TOPdisplay1[30]
+set_location_assignment PIN_D22 -to TOPdisplay1[31]
+set_location_assignment PIN_F18 -to TOPdisplay2[0]
+set_location_assignment PIN_E20 -to TOPdisplay2[1]
+set_location_assignment PIN_E19 -to TOPdisplay2[2]
+set_location_assignment PIN_J18 -to TOPdisplay2[3]
+set_location_assignment PIN_H19 -to TOPdisplay2[4]
+set_location_assignment PIN_F19 -to TOPdisplay2[5]
+set_location_assignment PIN_F20 -to TOPdisplay2[6]
+set_location_assignment PIN_F17 -to TOPdisplay2[7]
+set_location_assignment PIN_J20 -to TOPdisplay2[8]
+set_location_assignment PIN_K20 -to TOPdisplay2[9]
+set_location_assignment PIN_L18 -to TOPdisplay2[10]
+set_location_assignment PIN_N18 -to TOPdisplay2[11]
+set_location_assignment PIN_M20 -to TOPdisplay2[12]
+set_location_assignment PIN_N19 -to TOPdisplay2[13]
+set_location_assignment PIN_N20 -to TOPdisplay2[14]
+set_location_assignment PIN_L19 -to TOPdisplay2[15]
+set_location_assignment PIN_P11 -to TOPclock
+set_location_assignment PIN_C10 -to TOPreset
+set_location_assignment PIN_C11 -to TOPresetIM
+set_location_assignment PIN_A8 -to TOPleds[0]
+set_location_assignment PIN_A9 -to TOPleds[1]
+set_location_assignment PIN_A10 -to TOPleds[2]
+set_location_assignment PIN_B10 -to TOPleds[3]
+set_location_assignment PIN_D13 -to TOPleds[4]
+set_location_assignment PIN_C13 -to TOPleds[5]
+set_location_assignment PIN_E14 -to TOPleds[6]
+set_location_assignment PIN_D14 -to TOPleds[7]
+set_location_assignment PIN_A11 -to TOPleds[8]
+set_location_assignment PIN_B11 -to TOPleds[9]
+
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

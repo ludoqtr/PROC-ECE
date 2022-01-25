@@ -15,19 +15,21 @@ entity Alu is
 		ALUin2 		: in std_logic_vector (31 downto 0);
 		ALUfunct7 	: in std_logic;
 		ALUfunct3 	: in std_logic_vector (2 downto 0);
-		
 		-- OUTPUTS
 		ALUout 		: out std_logic_vector (31 downto 0);
-		ALUsup 		: out std_logic;
 		ALUeq 		: out std_logic;
-		ALUinf 		: out std_logic
+		ALUinf 		: out std_logic;
+		ALUsup 		: out std_logic;
+		ALUinfU		: out std_logic;
+		ALUsupU		: out std_logic
 	);
 end entity;
 
 -- ARCHITECTURE
 architecture archi of Alu is
 
-	signal ALUin2sig : std_logic_vector(31 downto 0);
+	signal ALUin2sig1 : std_logic_vector(31 downto 0);
+	signal ALUin2sig2 : std_logic_vector(4 downto 0);
 	signal ALUin2int : integer;
 	
 	signal ALUsum : std_logic_vector(31 downto 0);
@@ -42,9 +44,10 @@ architecture archi of Alu is
 	
 begin
 	
-	-- useful signals
-	ALUin2sig <= std_logic_vector(ALUin2);
-	ALUin2int <= to_integer(unsigned(ALUin2sig));
+	-- shift operations only use 5 lower bits
+	ALUin2sig1 <= std_logic_vector(ALUin2);
+	ALUin2sig2(4 downto 0) <= ALUin2sig1(4 downto 0);
+	ALUin2int <= to_integer(unsigned(ALUin2sig2));
 	
 	-- sum
 	ALUsum <= std_logic_vector(unsigned(ALUin1) + unsigned(ALUin2));
@@ -57,9 +60,9 @@ begin
 	-- sra
 	ALUsra <= to_stdlogicvector(to_bitvector(ALUin1) sra ALUin2int);
 	-- slt signed and unsigned
-	ALUslt <= 		"00000000000000000000000000000001" when ((unsigned(ALUIn1) < unsigned(ALUIn2)) AND ALUfunct3 = "011")
-				 else "00000000000000000000000000000001" when ((signed(ALUIn1) < signed(ALUIn2)) AND ALUfunct3 = "010")
-				 else (others => '0');
+	ALUslt <= 	"00000000000000000000000000000001" when ((unsigned(ALUIn1) < unsigned(ALUIn2)) AND ALUfunct3 = "011")
+			else "00000000000000000000000000000001" when ((signed(ALUIn1) < signed(ALUIn2)) AND ALUfunct3 = "010")
+			else (others => '0');
 	-- and
 	ALUand <= ALUin1 AND ALUin2;
 	-- or
@@ -69,18 +72,20 @@ begin
 	
 	-- outputs
 	ALUout <= 	  ALUsum when (ALUfunct3(2 downto 0) = "000" and ALUfunct7 = '0')		-- ADD
-				else ALUsub when (ALUfunct3(2 downto 0) = "000" and ALUfunct7 = '1')		-- SUB
-				else ALUsll when (ALUfunct3(2 downto 0) = "001") 								-- SLL															
-				else ALUslt when (ALUfunct3(2 downto 1) = "01") 								-- SLT
-				else ALUxor when (ALUfunct3(2 downto 0) = "100")								-- XOR
+				else ALUsub when (ALUfunct3(2 downto 0) = "000" and ALUfunct7 = '1')	-- SUB
+				else ALUsll when (ALUfunct3(2 downto 0) = "001") 			-- SLL	
+				else ALUslt when (ALUfunct3(2 downto 1) = "01") 			-- SLT
+				else ALUxor when (ALUfunct3(2 downto 0) = "100")			-- XOR
 				else ALUsrl when (ALUfunct3(2 downto 0) = "101" and ALUfunct7 = '0') 	-- SRL
 				else ALUsra when (ALUfunct3(2 downto 0) = "101" and ALUfunct7 = '1') 	-- SRA
-				else ALUor  when (ALUfunct3(2 downto 0) = "110") 								-- OR
-				else ALUand when (ALUfunct3(2 downto 0) = "111") 								-- AND
+				else ALUor  when (ALUfunct3(2 downto 0) = "110") 			-- OR
+				else ALUand when (ALUfunct3(2 downto 0) = "111") 			-- AND
 				else (others =>'0');
 	
-	ALUSup <= '1' when (unsigned(ALUIn1) > unsigned(ALUIn2)) else '0';
-	ALUInf <= '1' when (unsigned(ALUIn1) < unsigned(ALUIn2)) else '0';
-	ALUEq <= '1' when (unsigned(ALUIn1) = unsigned(ALUIn2)) else '0';
+	ALUeq <= '1' when (signed(ALUin1) = signed(ALUin2)) else '0';
+	ALUsup <= '1' when (signed(ALUin1) > signed(ALUin2)) else '0';
+	ALUinf <= '1' when (signed(ALUin1) < signed(ALUin2)) else '0';
+	ALUsupU <= '1' when (unsigned(ALUin1) > unsigned(ALUin2)) else '0';
+	ALUinfU <= '1' when (unsigned(ALUin1) < unsigned(ALUin2)) else '0';
 	
 end archi;

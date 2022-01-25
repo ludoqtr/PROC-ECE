@@ -11,13 +11,14 @@ use ieee.numeric_std.all;
 entity Top is
 	port (
 		-- INPUTS
-		TOPclock		: in std_logic;
-		TOPreset		: in std_logic;
-		TOPresetIM	: in std_logic;
-		TOPresetAT : in std_logic;
+		TOPclock		: in std_logic;		--must go through pll
+		TOPreset		: in std_logic; 	--SW0
+		TOPresetIM	: in std_logic; 		--SW1
 		-- DEMO OUTPUTS
-		disp0, disp1, disp2, disp3, disp4, disp5 : out std_logic_vector(0 to 7);
-		displed : out std_logic_vector(0 to 9)
+		TOPcounter : out std_logic_vector(31 downto 0); --0x80000001
+		TOPdisplay1 : out std_logic_vector(31 downto 0);--0x80000002
+		TOPdisplay2 : out std_logic_vector(31 downto 0);--0x80000003
+		TOPleds : out std_logic_vector(31 downto 0); 	--0x80000004
 	);
 end entity;
 
@@ -104,11 +105,24 @@ architecture archi of Top is
 		);
 	end component;
 	
-	component AffichageText is
+	component Counter is
 	port (
-			ATclock : in std_logic;
-			ATreset : in std_logic;
-			disp0, disp1, disp2, disp3, disp4, disp5 : out std_logic_vector(7 downto 0)
+		CPTclock	: in std_logic;
+		CPTreset	: in std_logic;
+		CPTcounter	: out std_logic_vector(31 downto 0);
+	);
+	
+	component Diplays is
+	port (
+			--INPUTS
+			DISPclock : in std_logic;
+			DISPreset : in std_logic;
+			DISPaddr : in std_logic_vector(31 downto 0);
+			DISPinput : in std_logic_vector(31 downto 0);
+			--OUTPUTS
+			DISPleds : out std_logic_vector(31 downto 0);
+			DISPdisplay1 : out std_logic_vector(31 downto 0);
+			DISPdisplay2 : out std_logic_vector(31 downto 0)
 		);
 	end component;
 
@@ -165,17 +179,24 @@ begin
 		DMout			=> SIGoutputDM--complex
 	);
 	
-	-- affichage text
-	instAffichTxt : AffichageText 
+	instCPT : Counter
 	port map(
-		ATclock => TOPclock,
-		ATreset => TOPresetAT, 
-		disp0 => disp0,
-		disp1 => disp1,
-		disp2 => disp2,
-		disp3 => disp3,
-		disp4 => disp4,
-		disp5 => disp5
+		CPTclock	=> TOPclock,
+		CPTreset	=> TOPreset,
+		CPTcounter	=> TOPcounter
+	);
+	
+	instDISP : Displays 
+	port map(
+		--INPUTS
+		DISPclock 	=> TOPclock,
+		DISPreset 	=> TOPreset,
+		DISPaddr 	=> SIGaddrDM,
+		DISPinput 	=> SIGinputDM,
+		--OUTPUTS
+		DISPleds 	=> TOPleds,
+		DISPdisplay1 	=> TOPdisplay1,
+		DISPdisplay2 	=> TOPdisplay2
 	);
 	-- END
 end archi;

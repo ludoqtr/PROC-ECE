@@ -22,7 +22,9 @@ entity ProgramCounter is
 		PCauipc			: in std_logic;
 		PCalueq			: in std_logic;
 		PCaluinf			: in std_logic;
-		--PCalusup			: in std_logic;
+		PCalusup			: in std_logic;
+		PCaluinfU			: in std_logic;
+		PCalusupU			: in std_logic;
 		-- OUTPUTS
 		PCprogcounter	: inout std_logic_vector(31 downto 0)
 	);
@@ -45,29 +47,30 @@ begin
 	-- BEGIN
 	
 	-- branch cond
-	SigBranchCond <= 		  PCalueq 		when PCfunct3 = "000" 
+	SigBranchCond <= 		  		PCalueq 		when PCfunct3 = "000" 
 							else not PCalueq 	when PCfunct3 = "001"
-							else '0' 			when PCfunct3 = "010"
-							else '0' 			when PCfunct3 = "011"
+							else '0' 		when PCfunct3 = "010"
+							else '0' 		when PCfunct3 = "011"
 							else PCaluinf 		when PCfunct3 = "100"
-							else not PCaluinf when PCfunct3 = "101"
-							else PCaluinf 		when PCfunct3 = "110"
-							else not PCaluinf when PCfunct3 = "111"
+							else PCalusup 		when PCfunct3 = "101"
+							else PCaluinfU 		when PCfunct3 = "110"
+							else PCalusupU 		when PCfunct3 = "111"
 							else '0';
 							
 	-- mux 1
 	SigMux1Sel <= 	(SigBranchCond AND PCbranch) OR PCjal OR PCjalr OR PCauipc; --mux3
 	SigMux1Out <= 	"00000000000000000000000000000100" when SigMux1Sel = '0'
-						else PCoffset;
+			else PCoffset;
 	
 	-- adder
-	SigOffSum <= std_logic_vector(unsigned(PCprogcounter) + unsigned(SigMux1Out));
-	SigOffSub <= std_logic_vector(unsigned(PCprogcounter) - unsigned(SigMux1Out));
+	SigOffSum <= 	std_logic_vector(unsigned(PCprogcounter) + unsigned(SigMux1Out));
+	SigOffSub <= 	std_logic_vector(unsigned(PCprogcounter) - unsigned(SigMux1Out));
 	
 	-- mux 2
 	SigMux2Sel <= 	SigMux1Sel AND PCoffsetsign;
-	SigMux2Out <= 	SigOffSum when SigMux2Sel = '0'
-						else SigOffSub;
+	SigMux2Out <= 	PCoffset when PCjalr = '1' else
+			SigOffSum when (SigMux2Sel = '0' AND PCjalr = '0') OR PCbranch = '1' else
+			SigOffSub;
 						
 	p1 : process(PCreset, PCclock)
 	begin
