@@ -489,7 +489,7 @@ architecture archi of InstructionMemory is
 		 x"53", x"53", x"4f", x"55",
 		 x"50", x"48", x"20", x"2d",
 		 x"20", x"50", x"49", x"45",
-		 x"52", x"52", x"45", x"00",
+		 x"52", x"52", x"45", x"00"
    );
 	
 	signal SigIMprogcounter00 : integer;
