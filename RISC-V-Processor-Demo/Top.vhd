@@ -15,10 +15,10 @@ entity Top is
 		TOPreset		: in std_logic; 	--SW0
 		TOPresetIM	: in std_logic; 		--SW1
 		-- DEMO OUTPUTS
-		TOPcounter : out std_logic_vector(31 downto 0); --0x80000001
+		TOPcounter : inout std_logic_vector(31 downto 0); --0x80000001
 		TOPdisplay1 : out std_logic_vector(31 downto 0);--0x80000002
 		TOPdisplay2 : out std_logic_vector(31 downto 0);--0x80000003
-		TOPleds : out std_logic_vector(31 downto 0); 	--0x80000004
+		TOPleds : out std_logic_vector(31 downto 0) 	--0x80000004
 	);
 end entity;
 
@@ -109,10 +109,11 @@ architecture archi of Top is
 	port (
 		CPTclock	: in std_logic;
 		CPTreset	: in std_logic;
-		CPTcounter	: out std_logic_vector(31 downto 0);
+		CPTcounter	: inout std_logic_vector(31 downto 0)
 	);
+	end component;
 	
-	component Diplays is
+	component Displays is
 	port (
 			--INPUTS
 			DISPclock : in std_logic;
