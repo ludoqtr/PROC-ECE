@@ -16,9 +16,9 @@ entity Top is
 		TOPresetIM	: in std_logic; 		--SW1
 		-- DEMO OUTPUTS
 		TOPcounter : inout std_logic_vector(31 downto 0); --0x80000001
-		TOPdisplay1 : out std_logic_vector(31 downto 0);--0x80000002
-		TOPdisplay2 : out std_logic_vector(31 downto 0);--0x80000003
-		TOPleds : out std_logic_vector(31 downto 0) 	--0x80000004
+		TOPdisplay1 : inout std_logic_vector(31 downto 0);--0x80000002
+		TOPdisplay2 : inout std_logic_vector(31 downto 0);--0x80000003
+		TOPleds : inout std_logic_vector(31 downto 0) 	--0x80000004
 	);
 end entity;
 
@@ -121,9 +121,9 @@ architecture archi of Top is
 			DISPaddr : in std_logic_vector(31 downto 0);
 			DISPinput : in std_logic_vector(31 downto 0);
 			--OUTPUTS
-			DISPleds : out std_logic_vector(31 downto 0);
-			DISPdisplay1 : out std_logic_vector(31 downto 0);
-			DISPdisplay2 : out std_logic_vector(31 downto 0)
+			DISPleds : inout std_logic_vector(31 downto 0);
+			DISPdisplay1 : inout std_logic_vector(31 downto 0);
+			DISPdisplay2 : inout std_logic_vector(31 downto 0)
 		);
 	end component;
 
@@ -138,19 +138,25 @@ architecture archi of Top is
 	signal SIGaddrDM		: std_logic_vector (31 downto 0);
 	signal SIGinputDM		: std_logic_vector (31 downto 0);
 	signal SIGoutputDM	: std_logic_vector (31 downto 0);
+	signal SIGoutputDMorREG	: std_logic_vector (31 downto 0);
+
 	
 begin
 	-- BEGIN
 
 	-- ALL
-	
+	SIGoutputDMorREG <= TOPcounter when SIGaddrDM = x"80000001"
+							  else TOPdisplay1 when SIGaddrDM = x"80000002"
+							  else TOPdisplay2 when SIGaddrDM = x"80000003"
+							  else TOPleds when SIGaddrDM = x"80000004"
+							  else SIGoutputDM;
 	-- INSTANCES
 	instPROC : Processor
 	port map(
 		PROCclock		=> TOPclock,
 		PROCreset		=> TOPreset,
 		PROCinstruction=> SIGinstruction,
-		PROCoutputDM 	=> SIGoutputDM,
+		PROCoutputDM 	=> SIGoutputDMorREG,
 		-- OUTPUTS
 		PROCprogcounter=> SIGprogcounter,
 		PROCstore 		=> SIGstore,

@@ -64,12 +64,12 @@ begin
 	
 	-- adder
 	SigOffSum <= 	std_logic_vector(unsigned(PCprogcounter) + unsigned(SigMux1Out));
-	SigOffSub <= 	std_logic_vector(unsigned(PCprogcounter) - unsigned(SigMux1Out));
+	--SigOffSub <= 	std_logic_vector(unsigned(PCprogcounter) - unsigned(SigMux1Out));
 	
 	-- mux 2
 	SigMux2Sel <= 	SigMux1Sel AND PCoffsetsign;
 	SigMux2Out <= 	PCoffset when PCjalr = '1' else
-			SigOffSum when (SigMux2Sel = '0' AND PCjalr = '0') OR PCbranch = '1' else
+			SigOffSum when (SigMux2Sel = '0' AND PCjalr = '0') OR PCjal = '1' OR PCbranch = '1' else
 			SigOffSub;
 						
 	p1 : process(PCreset, PCclock)

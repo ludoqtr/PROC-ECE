@@ -25,7 +25,7 @@ end entity;
 
 -- ARCHITECTURE
 architecture archi of DataMemory is
-	type mem is array(0 to 4096) of std_logic_vector(7 downto 0);
+	type mem is array(0 to 16383) of std_logic_vector(7 downto 0);
 	signal SigDMmemory : mem;
 	signal SigDMaddr00 : integer;
 	signal SigDMaddr08 : integer;
@@ -44,10 +44,10 @@ begin
 	end process;
 	
 	-- store
-	p2 : process(DMclock, DMreset, DMstore, DMfunct3)
+	p2 : process(DMclock, DMreset)
 	begin
 		if(DMreset = '1') then
-			SigDMmemory(0 to 255) <= (others => "00000000");
+			SigDMmemory(0 to 16383) <= (others => "00000000");
 		elsif(DMreset = '0') then
 			if(rising_edge(DMclock)) then
 				if(DMstore = '1') then
@@ -70,10 +70,10 @@ begin
 	end process;
 	
 	-- load
-	p3 : process(DMload, DMreset, DMfunct3)
+	p3 : process(DMreset, DMclock)
 	begin
 		if(DMload = '1') then
-			if(DMreset = '0') then
+			if(DMreset = '0' and falling_edge(DMclock)) then
 				if(DMfunct3 = "000") then
 					DMout(7 downto 0) <= SigDMmemory(SigDMaddr00);
 					if( (SigDMmemory(SigDMaddr00) AND "10000000") = "10000000" ) then

@@ -17,9 +17,9 @@ entity Displays is
 		DISPaddr : in std_logic_vector(31 downto 0);
 		DISPinput : in std_logic_vector(31 downto 0);
 		--OUTPUTS
-		DISPleds : out std_logic_vector(31 downto 0);
-		DISPdisplay1 : out std_logic_vector(31 downto 0);
-		DISPdisplay2 : out std_logic_vector(31 downto 0)
+		DISPleds : inout std_logic_vector(31 downto 0);
+		DISPdisplay1 : inout std_logic_vector(31 downto 0);
+		DISPdisplay2 : inout std_logic_vector(31 downto 0)
 	);
 end entity;
 
@@ -34,6 +34,11 @@ architecture archi of Displays is
 
 begin
 	-- BEGIN
+	SigDISPaddr <= DISPaddr;
+	SigDISPinput <= DISPinput;
+	SigDISPleds <= DISPleds;
+	SigDISPdisplay1 <= DISPdisplay1;
+	SigDISPdisplay2 <= DISPdisplay2;
 	
 	-- display process
 	p1 : process(DISPclock, DISPreset, DISPinput)
@@ -55,7 +60,13 @@ begin
 					SigDISPleds <= SigDISPinput;
 
 				end if;
+			
+			else 
+				SigDISPleds <= SigDISPleds;
+				SigDISPdisplay1 <= SigDISPdisplay1;
+				SigDISPdisplay2 <= SigDISPdisplay2;
 			end if;
+			
 		end if;
 	end process;
 	
