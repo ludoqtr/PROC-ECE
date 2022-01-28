@@ -1,0 +1,81 @@
+-- Projet de fin d'études : RISC-V
+-- ECE Paris / SECAPEM
+-- Data Memory VHDL
+
+-- LIBRARIES
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+-- ENTITY
+entity DataMemory is
+	port (
+		-- INPUTS
+--		DMclock		: in std_logic;
+--		DMreset		: in std_logic;
+		DMstore		: in std_logic;
+		DMload		: in std_logic;
+		DMaddr		: in std_logic_vector(31 downto 0);
+		DMin			: in std_logic_vector(31 downto 0);
+		DMfunct3		: in std_logic_vector(2 downto 0);
+		-- OUTPUTS
+		DMout			: out std_logic_vector(31 downto 0)
+	);
+end entity;
+
+-- ARCHITECTURE
+architecture archi of DataMemory is
+	type mem is array(0 to 16383) of std_logic_vector(7 downto 0);
+	signal SigDMmemory : mem := (others => "00000000");
+	signal SigDMaddr00 : integer;
+	signal SigDMaddr08 : integer;
+	signal SigDMaddr16 : integer;
+	signal SigDMaddr24 : integer;
+begin
+	-- BEGIN
+	
+	-- useful adresses used to store or load
+	SigDMaddr00 <= to_integer(unsigned(DMaddr)) when (DMload = '1' OR DMstore = '1') else
+						0;
+	SigDMaddr08 <= to_integer(unsigned(DMaddr)) + 1 when (DMload = '1' OR DMstore = '1') else
+						0;
+	SigDMaddr16 <= to_integer(unsigned(DMaddr)) + 2 when (DMload = '1' OR DMstore = '1') else
+						0;
+	SigDMaddr24 <= to_integer(unsigned(DMaddr)) + 3 when (DMload = '1' OR DMstore = '1') else
+						0;
+	
+	-- store for asynchronous data memory
+	SigDMmemory(SigDMaddr00) <= DMin(7 downto 0) when   (DMstore = '1') else
+										 SigDMmemory(SigDMaddr00);
+										 
+	SigDMmemory(SigDMaddr08) <= DMin(15 downto 8) when  (DMstore = '1' AND (DMfunct3 = "001" OR DMfunct3 = "010")) else
+										 SigDMmemory(SigDMaddr08);
+										 
+	SigDMmemory(SigDMaddr16) <= DMin(23 downto 16) when (DMstore = '1' AND (DMfunct3 = "010")) else
+										 SigDMmemory(SigDMaddr16);
+										 
+	SigDMmemory(SigDMaddr24) <= DMin(31 downto 24) when (DMstore = '1' AND (DMfunct3 = "010")) else
+										 SigDMmemory(SigDMaddr24);
+	
+
+	
+	
+	-- load for asynchronous data memory
+	DMout(7 downto 0) <= SigDMmemory(SigDMaddr00) when (DMload = '1') else
+								(others => '0');
+								
+	DMout(15 downto 8)<= SigDMmemory(SigDMaddr08) when (DMload = '1' AND (DMfunct3 = "001" OR DMfunct3 = "010" OR DMfunct3 = "101")) else
+								(others => '1') when (DMload = '1' AND (DMfunct3 = "000" AND ((SigDMmemory(SigDMaddr00) AND "10000000") = "10000000"))) else
+								(others => '0');
+	
+	DMout(23 downto 16)<=SigDMmemory(SigDMaddr16) when (DMload = '1' AND (DMfunct3 = "010")) else
+								(others => '1') when (DMload = '1' AND ((DMfunct3 = "000" AND ((SigDMmemory(SigDMaddr00) AND "10000000") = "10000000")) OR (DMfunct3 = "001" AND ((SigDMmemory(SigDMaddr08) AND "10000000") = "10000000")))) else
+								(others => '0');
+	
+	DMout(31 downto 24)<=SigDMmemory(SigDMaddr24) when (DMload = '1' AND (DMfunct3 = "010")) else
+								(others => '1') when (DMload = '1' AND ((DMfunct3 = "000" AND ((SigDMmemory(SigDMaddr00) AND "10000000") = "10000000")) OR (DMfunct3 = "001" AND ((SigDMmemory(SigDMaddr08) AND "10000000") = "10000000")))) else
+								(others => '0');
+	
+	-- END
+end archi;
+-- END FILE
