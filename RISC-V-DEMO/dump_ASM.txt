@@ -1,0 +1,120 @@
+
+main.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	00001137          	lui	sp,0x1
+   4:	00c000ef          	jal	ra,10 <main>
+   8:	00100073          	ebreak
+   c:	0000006f          	j	c <_start+0xc>
+
+00000010 <main>:
+  10:	0007a6b7          	lui	a3,0x7a
+  14:	80000737          	lui	a4,0x80000
+  18:	11f68693          	addi	a3,a3,287 # 7a11f <s+0x7a0d3>
+  1c:	04c00793          	li	a5,76
+  20:	07078593          	addi	a1,a5,112
+  24:	0007a503          	lw	a0,0(a5)
+  28:	00a72223          	sw	a0,4(a4) # 80000004 <s+0x7fffffb8>
+  2c:	0047d503          	lhu	a0,4(a5)
+  30:	00a72423          	sw	a0,8(a4)
+  34:	00072503          	lw	a0,0(a4)
+  38:	fea6fee3          	bgeu	a3,a0,34 <main+0x24>
+  3c:	00072023          	sw	zero,0(a4)
+  40:	00878793          	addi	a5,a5,8
+  44:	feb790e3          	bne	a5,a1,24 <main+0x14>
+  48:	fd5ff06f          	j	1c <main+0xc>
+
+Disassembly of section .rodata:
+
+0000004c <s>:
+  4c:	ffff                	0xffff
+  4e:	ffff                	0xffff
+  50:	ffff                	0xffff
+  52:	0000                	unimp
+  54:	ff8c                	fsw	fa1,56(a5)
+  56:	ffff                	0xffff
+  58:	ffff                	0xffff
+  5a:	0000                	unimp
+  5c:	8cce                	mv	s9,s3
+  5e:	ffff                	0xffff
+  60:	ffff                	0xffff
+  62:	0000                	unimp
+  64:	cec0                	sw	s0,28(a3)
+  66:	ff8c                	fsw	fa1,56(a5)
+  68:	ffff                	0xffff
+  6a:	0000                	unimp
+  6c:	c0c6                	sw	a7,64(sp)
+  6e:	8cce                	mv	s9,s3
+  70:	ffff                	0xffff
+  72:	0000                	unimp
+  74:	cec0c6bf 0000ff8c 	0xff8ccec0c6bf
+  7c:	bf86                	fsd	ft1,504(sp)
+  7e:	c0c6                	sw	a7,64(sp)
+  80:	8cce                	mv	s9,s3
+  82:	0000                	unimp
+  84:	86c6                	mv	a3,a7
+  86:	cec0c6bf c6860000 	0xc6860000cec0c6bf
+  8e:	bf86                	fsd	ft1,504(sp)
+  90:	c0c6                	sw	a7,64(sp)
+  92:	0000                	unimp
+  94:	86ff                	0x86ff
+  96:	86c6                	mv	a3,a7
+  98:	0000c6bf c686ffff 	0xc686ffff0000c6bf
+  a0:	bf86                	fsd	ft1,504(sp)
+  a2:	0000                	unimp
+  a4:	ffff                	0xffff
+  a6:	86ff                	0x86ff
+  a8:	86c6                	mv	a3,a7
+  aa:	0000                	unimp
+  ac:	ffff                	0xffff
+  ae:	ffff                	0xffff
+  b0:	c686                	sw	ra,76(sp)
+  b2:	0000                	unimp
+  b4:	ffff                	0xffff
+  b6:	ffff                	0xffff
+  b8:	86ff                	0x86ff
+	...
+
+Disassembly of section .riscv.attributes:
+
+00000000 <.riscv.attributes>:
+   0:	1b41                	addi	s6,s6,-16
+   2:	0000                	unimp
+   4:	7200                	flw	fs0,32(a2)
+   6:	7369                	lui	t1,0xffffa
+   8:	01007663          	bgeu	zero,a6,14 <main+0x4>
+   c:	0011                	c.nop	4
+   e:	0000                	unimp
+  10:	1004                	addi	s1,sp,32
+  12:	7205                	lui	tp,0xfffe1
+  14:	3376                	fld	ft6,376(sp)
+  16:	6932                	flw	fs2,12(sp)
+  18:	7032                	flw	ft0,44(sp)
+  1a:	0030                	addi	a2,sp,8
+
+Disassembly of section .comment:
+
+00000000 <.comment>:
+   0:	3a434347          	fmsub.d	ft6,ft6,ft4,ft7,rmm
+   4:	2820                	fld	fs0,80(s0)
+   6:	736f7263          	bgeu	t5,s6,72a <s+0x6de>
+   a:	6f6f7473          	csrrci	s0,0x6f6,30
+   e:	2d6c                	fld	fa1,216(a0)
+  10:	474e                	lw	a4,208(sp)
+  12:	3120                	fld	fs0,96(a0)
+  14:	322e                	fld	ft4,232(sp)
+  16:	2e34                	fld	fa3,88(a2)
+  18:	2e30                	fld	fa2,88(a2)
+  1a:	3035                	jal	fffff846 <s+0xfffff7fa>
+  1c:	5f30                	lw	a2,120(a4)
+  1e:	3835                	jal	fffff85a <s+0xfffff80e>
+  20:	6534                	flw	fa3,72(a0)
+  22:	3735                	jal	ffffff4e <s+0xffffff02>
+  24:	2965                	jal	4dc <s+0x490>
+  26:	3120                	fld	fs0,96(a0)
+  28:	2e31                	jal	344 <s+0x2f8>
+  2a:	2e32                	fld	ft8,264(sp)
+  2c:	0030                	addi	a2,sp,8
