@@ -1,0 +1,472 @@
+# Reading pref.tcl
+# do PROC-7SEG_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying D:/QuartusLite/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+D:/QuartusLite/Projet/PROC-ECE-main/Test/db {D:/QuartusLite/Projet/PROC-ECE-main/Test/db/pll_altpll.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:59:02 on Jan 31,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/QuartusLite/Projet/PROC-ECE-main/Test/db" D:/QuartusLite/Projet/PROC-ECE-main/Test/db/pll_altpll.v 
+# -- Compiling module PLL_altpll
+# 
+# Top level modules:
+# 	PLL_altpll
+# End time: 15:59:02 on Jan 31,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/QuartusLite/Projet/PROC-ECE-main/Test/Top.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:59:02 on Jan 31,2022
+# vcom -reportprogress 300 -93 -work work D:/QuartusLite/Projet/PROC-ECE-main/Test/Top.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Top
+# -- Compiling architecture archi of Top
+# End time: 15:59:02 on Jan 31,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/QuartusLite/Projet/PROC-ECE-main/Test/RegisterFile.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:59:02 on Jan 31,2022
+# vcom -reportprogress 300 -93 -work work D:/QuartusLite/Projet/PROC-ECE-main/Test/RegisterFile.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity RegisterFile
+# -- Compiling architecture archi of RegisterFile
+# End time: 15:59:02 on Jan 31,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/QuartusLite/Projet/PROC-ECE-main/Test/ProgramCounter.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:59:02 on Jan 31,2022
+# vcom -reportprogress 300 -93 -work work D:/QuartusLite/Projet/PROC-ECE-main/Test/ProgramCounter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ProgramCounter
+# -- Compiling architecture archi of ProgramCounter
+# End time: 15:59:02 on Jan 31,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/QuartusLite/Projet/PROC-ECE-main/Test/Processor.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:59:02 on Jan 31,2022
+# vcom -reportprogress 300 -93 -work work D:/QuartusLite/Projet/PROC-ECE-main/Test/Processor.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Processor
+# -- Compiling architecture archi of Processor
+# End time: 15:59:02 on Jan 31,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/QuartusLite/Projet/PROC-ECE-main/Test/InstructionMemory.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:59:03 on Jan 31,2022
+# vcom -reportprogress 300 -93 -work work D:/QuartusLite/Projet/PROC-ECE-main/Test/InstructionMemory.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity InstructionMemory
+# -- Compiling architecture archi of InstructionMemory
+# End time: 15:59:03 on Jan 31,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/QuartusLite/Projet/PROC-ECE-main/Test/InstructionDecoder.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:59:03 on Jan 31,2022
+# vcom -reportprogress 300 -93 -work work D:/QuartusLite/Projet/PROC-ECE-main/Test/InstructionDecoder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity InstructionDecoder
+# -- Compiling architecture archi of InstructionDecoder
+# End time: 15:59:03 on Jan 31,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/QuartusLite/Projet/PROC-ECE-main/Test/Displays.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:59:03 on Jan 31,2022
+# vcom -reportprogress 300 -93 -work work D:/QuartusLite/Projet/PROC-ECE-main/Test/Displays.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Displays
+# -- Compiling architecture archi of Displays
+# End time: 15:59:04 on Jan 31,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/QuartusLite/Projet/PROC-ECE-main/Test/DataMemory.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:59:04 on Jan 31,2022
+# vcom -reportprogress 300 -93 -work work D:/QuartusLite/Projet/PROC-ECE-main/Test/DataMemory.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity DataMemory
+# -- Compiling architecture archi of DataMemory
+# End time: 15:59:04 on Jan 31,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/QuartusLite/Projet/PROC-ECE-main/Test/Counter.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:59:04 on Jan 31,2022
+# vcom -reportprogress 300 -93 -work work D:/QuartusLite/Projet/PROC-ECE-main/Test/Counter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Counter
+# -- Compiling architecture archi of Counter
+# End time: 15:59:04 on Jan 31,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/QuartusLite/Projet/PROC-ECE-main/Test/Alu.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:59:04 on Jan 31,2022
+# vcom -reportprogress 300 -93 -work work D:/QuartusLite/Projet/PROC-ECE-main/Test/Alu.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Alu
+# -- Compiling architecture archi of Alu
+# End time: 15:59:04 on Jan 31,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/QuartusLite/Projet/PROC-ECE-main/Test/PLL.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:59:05 on Jan 31,2022
+# vcom -reportprogress 300 -93 -work work D:/QuartusLite/Projet/PROC-ECE-main/Test/PLL.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity PLL
+# -- Compiling architecture SYN of pll
+# End time: 15:59:05 on Jan 31,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/QuartusLite/Projet/PROC-ECE-main/Test/RAM00.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:59:05 on Jan 31,2022
+# vcom -reportprogress 300 -93 -work work D:/QuartusLite/Projet/PROC-ECE-main/Test/RAM00.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package altera_mf_components
+# -- Compiling entity RAM00
+# -- Compiling architecture SYN of ram00
+# End time: 15:59:05 on Jan 31,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/QuartusLite/Projet/PROC-ECE-main/Test/RAM08.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:59:05 on Jan 31,2022
+# vcom -reportprogress 300 -93 -work work D:/QuartusLite/Projet/PROC-ECE-main/Test/RAM08.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package altera_mf_components
+# -- Compiling entity RAM08
+# -- Compiling architecture SYN of ram08
+# End time: 15:59:06 on Jan 31,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/QuartusLite/Projet/PROC-ECE-main/Test/RAM16.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:59:06 on Jan 31,2022
+# vcom -reportprogress 300 -93 -work work D:/QuartusLite/Projet/PROC-ECE-main/Test/RAM16.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package altera_mf_components
+# -- Compiling entity RAM16
+# -- Compiling architecture SYN of ram16
+# End time: 15:59:06 on Jan 31,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/QuartusLite/Projet/PROC-ECE-main/Test/RAM24.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:59:06 on Jan 31,2022
+# vcom -reportprogress 300 -93 -work work D:/QuartusLite/Projet/PROC-ECE-main/Test/RAM24.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package altera_mf_components
+# -- Compiling entity RAM24
+# -- Compiling architecture SYN of ram24
+# End time: 15:59:06 on Jan 31,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {D:/QuartusLite/Projet/PROC-ECE-main/Test/TestBenchTop.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:59:06 on Jan 31,2022
+# vcom -reportprogress 300 -93 -work work D:/QuartusLite/Projet/PROC-ECE-main/Test/TestBenchTop.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity TestBenchTop
+# -- Compiling architecture VHDL of TestBenchTop
+# ** Warning: D:/QuartusLite/Projet/PROC-ECE-main/Test/TestBenchTop.vhd(43): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# ** Warning: D:/QuartusLite/Projet/PROC-ECE-main/Test/TestBenchTop.vhd(45): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# ** Warning: D:/QuartusLite/Projet/PROC-ECE-main/Test/TestBenchTop.vhd(51): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# End time: 15:59:07 on Jan 31,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 3
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L fiftyfivenm -L rtl_work -L work -voptargs="+acc"  TestBenchTop
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L fiftyfivenm -L rtl_work -L work -voptargs=""+acc"" TestBenchTop 
+# Start time: 15:59:07 on Jan 31,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.testbenchtop(vhdl)
+# Loading work.top(archi)
+# Loading work.processor(archi)
+# Loading work.programcounter(archi)
+# Loading work.instructiondecoder(archi)
+# Loading work.registerfile(archi)
+# Loading work.alu(archi)
+# Loading work.instructionmemory(archi)
+# Loading work.datamemory(archi)
+# Loading altera_mf.altera_mf_components
+# Loading work.ram00(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.ram08(syn)
+# Loading work.ram16(syn)
+# Loading work.ram24(syn)
+# Loading work.counter(archi)
+# Loading work.displays(archi)
+# Loading work.pll(syn)
+# Loading altera_mf.mf_pllpack(body)
+# Loading altera_mf.altpll(behavior)
+# Loading altera_mf.mf_cycloneiii_pll(vital_pll)
+# Loading altera_mf.mf_cda_mn_cntr(behave)
+# Loading altera_mf.mf_cda_scale_cntr(behave)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Warning: Warning: READ_DURING_WRITE_MODE_MIXED_PORTS is assumed as OLD_DATA
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instDM/instRAM24/altsyncram_component
+# ** Warning: Warning: READ_DURING_WRITE_MODE_MIXED_PORTS is assumed as OLD_DATA
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instDM/instRAM16/altsyncram_component
+# ** Warning: Warning: READ_DURING_WRITE_MODE_MIXED_PORTS is assumed as OLD_DATA
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instDM/instRAM08/altsyncram_component
+# ** Warning: Warning: READ_DURING_WRITE_MODE_MIXED_PORTS is assumed as OLD_DATA
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instDM/instRAM00/altsyncram_component
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instPROC/instALU
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instPROC/instALU
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instPROC/instALU
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instPROC/instALU
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instPROC/instALU
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instPROC/instALU
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instPROC/instALU
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instPROC/instALU
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /testbenchtop/i1/instIM
+# ** Note: MAX 10 PLL was reset
+#    Time: 0 ps  Iteration: 3  Instance: /testbenchtop/i1/instPLL/altpll_component/CYCLONEIII_ALTPLL/M5
+add wave -position end  sim:/testbenchtop/i1/instDM/DMclock
+add wave -position end  sim:/testbenchtop/i1/instDM/DMstore
+add wave -position end  sim:/testbenchtop/i1/instDM/DMload
+add wave -position end  sim:/testbenchtop/i1/instDM/DMaddr
+add wave -position end  sim:/testbenchtop/i1/instDM/DMin
+add wave -position end  sim:/testbenchtop/i1/instDM/DMfunct3
+add wave -position end  sim:/testbenchtop/i1/instDM/DMout
+add wave -position end  sim:/testbenchtop/i1/instDM/SIGcs
+add wave -position end  sim:/testbenchtop/i1/instDM/SIGaddrNEW
+add wave -position end  sim:/testbenchtop/i1/instDM/SIGinput00
+add wave -position end  sim:/testbenchtop/i1/instDM/SIGaddr00
+add wave -position end  sim:/testbenchtop/i1/instDM/SIGload00
+add wave -position end  sim:/testbenchtop/i1/instDM/SIGstore00
+add wave -position end  sim:/testbenchtop/i1/instDM/SIGoutput00
+add wave -position end  sim:/testbenchtop/i1/instDM/SIGinput08
+add wave -position end  sim:/testbenchtop/i1/instDM/SIGaddr08
+add wave -position end  sim:/testbenchtop/i1/instDM/SIGload08
+add wave -position end  sim:/testbenchtop/i1/instDM/SIGstore08
+add wave -position end  sim:/testbenchtop/i1/instDM/SIGoutput08
+add wave -position end  sim:/testbenchtop/i1/instDM/SIGinput16
+add wave -position end  sim:/testbenchtop/i1/instDM/SIGaddr16
+add wave -position end  sim:/testbenchtop/i1/instDM/SIGload16
+add wave -position end  sim:/testbenchtop/i1/instDM/SIGstore16
+add wave -position end  sim:/testbenchtop/i1/instDM/SIGoutput16
+add wave -position end  sim:/testbenchtop/i1/instDM/SIGinput24
+add wave -position end  sim:/testbenchtop/i1/instDM/SIGaddr24
+add wave -position end  sim:/testbenchtop/i1/instDM/SIGload24
+add wave -position end  sim:/testbenchtop/i1/instDM/SIGstore24
+add wave -position end  sim:/testbenchtop/i1/instDM/SIGoutput24
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run -all
+# ** Warning: Warning: READ_DURING_WRITE_MODE_MIXED_PORTS is assumed as OLD_DATA
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instDM/instRAM24/altsyncram_component
+# ** Warning: Warning: READ_DURING_WRITE_MODE_MIXED_PORTS is assumed as OLD_DATA
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instDM/instRAM16/altsyncram_component
+# ** Warning: Warning: READ_DURING_WRITE_MODE_MIXED_PORTS is assumed as OLD_DATA
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instDM/instRAM08/altsyncram_component
+# ** Warning: Warning: READ_DURING_WRITE_MODE_MIXED_PORTS is assumed as OLD_DATA
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instDM/instRAM00/altsyncram_component
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instPROC/instALU
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instPROC/instALU
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instPROC/instALU
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instPROC/instALU
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instPROC/instALU
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instPROC/instALU
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instPROC/instALU
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instPROC/instALU
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /testbenchtop/i1/instIM
+# ** Note: MAX 10 PLL was reset
+#    Time: 0 ps  Iteration: 3  Instance: /testbenchtop/i1/instPLL/altpll_component/CYCLONEIII_ALTPLL/M5
+add wave -position 0  sim:/testbenchtop/i1/instCPT/CPTcounter
+add wave -position 1  sim:/testbenchtop/i1/instPROC/PROCinstruction
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run -all
+# ** Warning: Warning: READ_DURING_WRITE_MODE_MIXED_PORTS is assumed as OLD_DATA
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instDM/instRAM24/altsyncram_component
+# ** Warning: Warning: READ_DURING_WRITE_MODE_MIXED_PORTS is assumed as OLD_DATA
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instDM/instRAM16/altsyncram_component
+# ** Warning: Warning: READ_DURING_WRITE_MODE_MIXED_PORTS is assumed as OLD_DATA
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instDM/instRAM08/altsyncram_component
+# ** Warning: Warning: READ_DURING_WRITE_MODE_MIXED_PORTS is assumed as OLD_DATA
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instDM/instRAM00/altsyncram_component
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instPROC/instALU
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instPROC/instALU
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instPROC/instALU
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instPROC/instALU
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instPROC/instALU
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instPROC/instALU
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instPROC/instALU
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /testbenchtop/i1/instPROC/instALU
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /testbenchtop/i1/instIM
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /testbenchtop/i1/instIM
+# ** Note: MAX 10 PLL was reset
+#    Time: 0 ps  Iteration: 3  Instance: /testbenchtop/i1/instPLL/altpll_component/CYCLONEIII_ALTPLL/M5
+# End time: 16:12:40 on Jan 31,2022, Elapsed time: 0:13:33
+# Errors: 0, Warnings: 28

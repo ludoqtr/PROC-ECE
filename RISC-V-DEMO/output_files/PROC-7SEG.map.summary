@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Mon Jan 31 18:29:11 2022
+Quartus Prime Version : 21.1.0 Build 842 10/21/2021 SJ Lite Edition
+Revision Name : PROC-7SEG
+Top-level Entity Name : Top
+Family : MAX 10
+Total logic elements : 4,435
+    Total combinational functions : 3,411
+    Dedicated logic registers : 1,157
+Total registers : 1157
+Total pins : 98
+Total virtual pins : 0
+Total memory bits : 32,768
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 1
+UFM blocks : 0
+ADC blocks : 0

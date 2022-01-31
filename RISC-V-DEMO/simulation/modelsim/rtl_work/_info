@@ -1,0 +1,723 @@
+m255
+K4
+z2
+!s11e MIXED_VERSIONS
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/QuartusLite/Projet/PROC-ECE-main/Test/simulation/modelsim
+Ealu
+Z1 w1643402836
+Z2 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 10
+R0
+Z5 8D:/QuartusLite/Projet/PROC-ECE-main/Test/Alu.vhd
+Z6 FD:/QuartusLite/Projet/PROC-ECE-main/Test/Alu.vhd
+l0
+Z7 L11 1
+V>NDiX@M3?87U7dUeL;RRj2
+!s100 T1dSUgWMNjSZgkmS^7m<@0
+Z8 OV;C;2020.1;71
+31
+Z9 !s110 1643641144
+!i10b 1
+Z10 !s108 1643641144.000000
+Z11 !s90 -reportprogress|300|-93|-work|work|D:/QuartusLite/Projet/PROC-ECE-main/Test/Alu.vhd|
+Z12 !s107 D:/QuartusLite/Projet/PROC-ECE-main/Test/Alu.vhd|
+!i113 1
+Z13 o-93 -work work
+Z14 tExplicit 1 CvgOpt 0
+Aarchi
+R2
+R3
+R4
+DEx4 work 3 alu 0 22 >NDiX@M3?87U7dUeL;RRj2
+!i122 10
+l45
+L29 63
+VDYRAE:eS2ogbo[8ZEb0022
+!s100 zoj]c`:1SO5N9@_m]bfKa0
+R8
+31
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Ecounter
+Z15 w1643556698
+R2
+R3
+R4
+!i122 9
+R0
+Z16 8D:/QuartusLite/Projet/PROC-ECE-main/Test/Counter.vhd
+Z17 FD:/QuartusLite/Projet/PROC-ECE-main/Test/Counter.vhd
+l0
+R7
+VciXYCa97PRgbhTU?;A]7;0
+!s100 WQS@O>_g0>[[kje[<ZW970
+R8
+31
+R9
+!i10b 1
+R10
+Z18 !s90 -reportprogress|300|-93|-work|work|D:/QuartusLite/Projet/PROC-ECE-main/Test/Counter.vhd|
+Z19 !s107 D:/QuartusLite/Projet/PROC-ECE-main/Test/Counter.vhd|
+!i113 1
+R13
+R14
+Aarchi
+R2
+R3
+R4
+DEx4 work 7 counter 0 22 ciXYCa97PRgbhTU?;A]7;0
+!i122 9
+l26
+L24 12
+VR?KO7jE0Tgmj@LzCWa0BH3
+!s100 A4eDhod[`EOY]AmEXL]4A0
+R8
+31
+R9
+!i10b 1
+R10
+R18
+R19
+!i113 1
+R13
+R14
+Edatamemory
+Z20 w1643376735
+R2
+R3
+R4
+!i122 8
+R0
+Z21 8D:/QuartusLite/Projet/PROC-ECE-main/Test/DataMemory.vhd
+Z22 FD:/QuartusLite/Projet/PROC-ECE-main/Test/DataMemory.vhd
+l0
+R7
+VO0VnTFfe2Y7]X0lA15bP73
+!s100 HB;lQVe[bJJjCFjc8hT=:2
+R8
+31
+R9
+!i10b 1
+R10
+Z23 !s90 -reportprogress|300|-93|-work|work|D:/QuartusLite/Projet/PROC-ECE-main/Test/DataMemory.vhd|
+Z24 !s107 D:/QuartusLite/Projet/PROC-ECE-main/Test/DataMemory.vhd|
+!i113 1
+R13
+R14
+Aarchi
+R2
+R3
+R4
+DEx4 work 10 datamemory 0 22 O0VnTFfe2Y7]X0lA15bP73
+!i122 8
+l109
+L26 236
+VZFQ2R1WjkfNz8O:F_:0<<3
+!s100 N=kL37ERm:0O36D`WjRBH0
+R8
+31
+R9
+!i10b 1
+R10
+R23
+R24
+!i113 1
+R13
+R14
+Edisplays
+R1
+R2
+R3
+R4
+!i122 7
+R0
+Z25 8D:/QuartusLite/Projet/PROC-ECE-main/Test/Displays.vhd
+Z26 FD:/QuartusLite/Projet/PROC-ECE-main/Test/Displays.vhd
+l0
+L12 1
+Vdz30Gzb05_>9kU<5g_MR>0
+!s100 o2@Lm]JjER>ET7>aoizQN0
+R8
+31
+R9
+!i10b 1
+Z27 !s108 1643641143.000000
+Z28 !s90 -reportprogress|300|-93|-work|work|D:/QuartusLite/Projet/PROC-ECE-main/Test/Displays.vhd|
+Z29 !s107 D:/QuartusLite/Projet/PROC-ECE-main/Test/Displays.vhd|
+!i113 1
+R13
+R14
+Aarchi
+R2
+R3
+R4
+DEx4 work 8 displays 0 22 dz30Gzb05_>9kU<5g_MR>0
+!i122 7
+l34
+L28 27
+VWHTmO6z?bZcM7gz67mk431
+!s100 N;Z8H[;8@409CgO<iCFcb0
+R8
+31
+R9
+!i10b 1
+R27
+R28
+R29
+!i113 1
+R13
+R14
+Einstructiondecoder
+R1
+R2
+R3
+R4
+!i122 6
+R0
+Z30 8D:/QuartusLite/Projet/PROC-ECE-main/Test/InstructionDecoder.vhd
+Z31 FD:/QuartusLite/Projet/PROC-ECE-main/Test/InstructionDecoder.vhd
+l0
+R7
+VT5Ul>0NKz]FiOf@:B]SP53
+!s100 OQ;Okk_T3M78nLOTzJOlX1
+R8
+31
+Z32 !s110 1643641143
+!i10b 1
+R27
+Z33 !s90 -reportprogress|300|-93|-work|work|D:/QuartusLite/Projet/PROC-ECE-main/Test/InstructionDecoder.vhd|
+Z34 !s107 D:/QuartusLite/Projet/PROC-ECE-main/Test/InstructionDecoder.vhd|
+!i113 1
+R13
+R14
+Aarchi
+R2
+R3
+R4
+DEx4 work 18 instructiondecoder 0 22 T5Ul>0NKz]FiOf@:B]SP53
+!i122 6
+l41
+L40 53
+V]zUia0d7V7Jo7zjP5`SEk3
+!s100 45l>n9C^I<<7EJP0]K?G]0
+R8
+31
+R32
+!i10b 1
+R27
+R33
+R34
+!i113 1
+R13
+R14
+Einstructionmemory
+Z35 w1643627054
+R2
+R3
+R4
+!i122 5
+R0
+Z36 8D:/QuartusLite/Projet/PROC-ECE-main/Test/InstructionMemory.vhd
+Z37 FD:/QuartusLite/Projet/PROC-ECE-main/Test/InstructionMemory.vhd
+l0
+R7
+V:5f4LEzfOm`P1igLPa^=_2
+!s100 _5lD[TdWO>UF6dzj^CPLk0
+R8
+31
+R32
+!i10b 1
+R27
+Z38 !s90 -reportprogress|300|-93|-work|work|D:/QuartusLite/Projet/PROC-ECE-main/Test/InstructionMemory.vhd|
+Z39 !s107 D:/QuartusLite/Projet/PROC-ECE-main/Test/InstructionMemory.vhd|
+!i113 1
+R13
+R14
+Aarchi
+R2
+R3
+R4
+DEx4 work 17 instructionmemory 0 22 :5f4LEzfOm`P1igLPa^=_2
+!i122 5
+l39
+L23 29
+VY]5c1=RZdNbb7_R4LfdB_0
+!s100 :SJNB184K^NcZSF[>hTVK3
+R8
+31
+R32
+!i10b 1
+R27
+R38
+R39
+!i113 1
+R13
+R14
+Epll
+Z40 w1643629125
+R3
+R4
+!i122 11
+R0
+Z41 8D:/QuartusLite/Projet/PROC-ECE-main/Test/PLL.vhd
+Z42 FD:/QuartusLite/Projet/PROC-ECE-main/Test/PLL.vhd
+l0
+Z43 L43 1
+Va_`0k9Xhd9P_;5b9c^lV@3
+!s100 <7Pd2g>Ql43<7zLj3EhK13
+R8
+31
+Z44 !s110 1643641145
+!i10b 1
+Z45 !s108 1643641145.000000
+Z46 !s90 -reportprogress|300|-93|-work|work|D:/QuartusLite/Projet/PROC-ECE-main/Test/PLL.vhd|
+Z47 !s107 D:/QuartusLite/Projet/PROC-ECE-main/Test/PLL.vhd|
+!i113 1
+R13
+R14
+Asyn
+R3
+R4
+DEx4 work 3 pll 0 22 a_`0k9Xhd9P_;5b9c^lV@3
+!i122 11
+l132
+L54 155
+VKg^IWPLa6NzAPFK;HJ<C;2
+!s100 TAl5eX?N[P7V`_52@e7b40
+R8
+31
+R44
+!i10b 1
+R45
+R46
+R47
+!i113 1
+R13
+R14
+vPLL_altpll
+Z48 !s110 1643641142
+!i10b 1
+!s100 3m[m:W6RYkl]PeSfcTHLU0
+!s11b Dg1SIo80bB@j0V0VzS_@n1
+Im]jM5U27LoB8l0BCLIFg03
+VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1643638353
+8D:/QuartusLite/Projet/PROC-ECE-main/Test/db/pll_altpll.v
+FD:/QuartusLite/Projet/PROC-ECE-main/Test/db/pll_altpll.v
+!i122 0
+L0 31 79
+OV;L;2020.1;71
+r1
+!s85 0
+31
+Z49 !s108 1643641142.000000
+!s107 D:/QuartusLite/Projet/PROC-ECE-main/Test/db/pll_altpll.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/QuartusLite/Projet/PROC-ECE-main/Test/db|D:/QuartusLite/Projet/PROC-ECE-main/Test/db/pll_altpll.v|
+!i113 1
+o-vlog01compat -work work
+!s92 -vlog01compat -work work +incdir+D:/QuartusLite/Projet/PROC-ECE-main/Test/db
+tCvgOpt 0
+n@p@l@l_altpll
+Eprocessor
+Z50 w1643640059
+R2
+R3
+R4
+!i122 4
+R0
+Z51 8D:/QuartusLite/Projet/PROC-ECE-main/Test/Processor.vhd
+Z52 FD:/QuartusLite/Projet/PROC-ECE-main/Test/Processor.vhd
+l0
+R7
+VYcE8g[6dldVCZ9<ma3iQS1
+!s100 cXoG@CiMLERk:fmf>8o>W3
+R8
+31
+R48
+!i10b 1
+R49
+Z53 !s90 -reportprogress|300|-93|-work|work|D:/QuartusLite/Projet/PROC-ECE-main/Test/Processor.vhd|
+Z54 !s107 D:/QuartusLite/Projet/PROC-ECE-main/Test/Processor.vhd|
+!i113 1
+R13
+R14
+Aarchi
+R2
+R3
+R4
+DEx4 work 9 processor 0 22 YcE8g[6dldVCZ9<ma3iQS1
+!i122 4
+l231
+L62 329
+Vk^=^X8@NecW;gl:8Jk3C60
+!s100 Qi=BQ:@mP6F?jf4;8]2Zn1
+R8
+31
+R48
+!i10b 1
+R49
+R53
+R54
+!i113 1
+R13
+R14
+Eprogramcounter
+Z55 w1643640330
+R2
+R3
+R4
+!i122 3
+R0
+Z56 8D:/QuartusLite/Projet/PROC-ECE-main/Test/ProgramCounter.vhd
+Z57 FD:/QuartusLite/Projet/PROC-ECE-main/Test/ProgramCounter.vhd
+l0
+R7
+V78PmXeYZFli58n=hB_8cH2
+!s100 HzlMG:8[1n@<:C12HgQIP0
+R8
+31
+R48
+!i10b 1
+R49
+Z58 !s90 -reportprogress|300|-93|-work|work|D:/QuartusLite/Projet/PROC-ECE-main/Test/ProgramCounter.vhd|
+Z59 !s107 D:/QuartusLite/Projet/PROC-ECE-main/Test/ProgramCounter.vhd|
+!i113 1
+R13
+R14
+Aarchi
+R2
+R3
+R4
+DEx4 work 14 programcounter 0 22 78PmXeYZFli58n=hB_8cH2
+!i122 3
+l48
+L36 63
+VXcVE62mV2SOTW2_O=^LeD2
+!s100 T9>ENBiaJdCJ9aT`1ZkTX1
+R8
+31
+R48
+!i10b 1
+R49
+R58
+R59
+!i113 1
+R13
+R14
+Eram00
+Z60 w1643629292
+Z61 DPx9 altera_mf 20 altera_mf_components 0 22 BN6nPmY:UEbXa[^5b@FTW1
+R3
+R4
+!i122 12
+R0
+Z62 8D:/QuartusLite/Projet/PROC-ECE-main/Test/RAM00.vhd
+Z63 FD:/QuartusLite/Projet/PROC-ECE-main/Test/RAM00.vhd
+l0
+R43
+VALoNa5D5RMZSM7Jb7G0`I2
+!s100 GCB9hjUGo1LX`8kVfX_H80
+R8
+31
+R44
+!i10b 1
+R45
+Z64 !s90 -reportprogress|300|-93|-work|work|D:/QuartusLite/Projet/PROC-ECE-main/Test/RAM00.vhd|
+Z65 !s107 D:/QuartusLite/Projet/PROC-ECE-main/Test/RAM00.vhd|
+!i113 1
+R13
+R14
+Asyn
+R61
+R3
+R4
+DEx4 work 5 ram00 0 22 ALoNa5D5RMZSM7Jb7G0`I2
+!i122 12
+l61
+Z66 L57 44
+VJXk4M>@mYUzgQIb]Ffg@92
+!s100 Y>5nDKo6z=QGT<A2lmAaN3
+R8
+31
+R44
+!i10b 1
+R45
+R64
+R65
+!i113 1
+R13
+R14
+Eram08
+Z67 w1643629362
+R61
+R3
+R4
+!i122 13
+R0
+Z68 8D:/QuartusLite/Projet/PROC-ECE-main/Test/RAM08.vhd
+Z69 FD:/QuartusLite/Projet/PROC-ECE-main/Test/RAM08.vhd
+l0
+R43
+VPB1j9Mf]NGgDEE:bom`i`0
+!s100 Y9P7USkYmMP8HFL8R@<eg0
+R8
+31
+Z70 !s110 1643641146
+!i10b 1
+R45
+Z71 !s90 -reportprogress|300|-93|-work|work|D:/QuartusLite/Projet/PROC-ECE-main/Test/RAM08.vhd|
+Z72 !s107 D:/QuartusLite/Projet/PROC-ECE-main/Test/RAM08.vhd|
+!i113 1
+R13
+R14
+Asyn
+R61
+R3
+R4
+DEx4 work 5 ram08 0 22 PB1j9Mf]NGgDEE:bom`i`0
+!i122 13
+l61
+R66
+VY<j`4mVN3QR3QcR]edTfd2
+!s100 Im9J?:Imla5:J?j]KSP7A3
+R8
+31
+R70
+!i10b 1
+R45
+R71
+R72
+!i113 1
+R13
+R14
+Eram16
+Z73 w1643629445
+R61
+R3
+R4
+!i122 14
+R0
+Z74 8D:/QuartusLite/Projet/PROC-ECE-main/Test/RAM16.vhd
+Z75 FD:/QuartusLite/Projet/PROC-ECE-main/Test/RAM16.vhd
+l0
+R43
+VOMHG0?d_JgMKWKjW_M6KY3
+!s100 ^0jBDm@PziB?;2jm3S:NM1
+R8
+31
+R70
+!i10b 1
+Z76 !s108 1643641146.000000
+Z77 !s90 -reportprogress|300|-93|-work|work|D:/QuartusLite/Projet/PROC-ECE-main/Test/RAM16.vhd|
+Z78 !s107 D:/QuartusLite/Projet/PROC-ECE-main/Test/RAM16.vhd|
+!i113 1
+R13
+R14
+Asyn
+R61
+R3
+R4
+DEx4 work 5 ram16 0 22 OMHG0?d_JgMKWKjW_M6KY3
+!i122 14
+l61
+R66
+VBk^hD16>zYKRFV86fX>c@0
+!s100 l=6fKB;bEeFTQT]^1Y`h[3
+R8
+31
+R70
+!i10b 1
+R76
+R77
+R78
+!i113 1
+R13
+R14
+Eram24
+Z79 w1643629503
+R61
+R3
+R4
+!i122 15
+R0
+Z80 8D:/QuartusLite/Projet/PROC-ECE-main/Test/RAM24.vhd
+Z81 FD:/QuartusLite/Projet/PROC-ECE-main/Test/RAM24.vhd
+l0
+R43
+V6>7hA>dVLPM_`i@XQf1DE2
+!s100 =k]I9bZk_8Neeo_`<T9jJ0
+R8
+31
+R70
+!i10b 1
+R76
+Z82 !s90 -reportprogress|300|-93|-work|work|D:/QuartusLite/Projet/PROC-ECE-main/Test/RAM24.vhd|
+Z83 !s107 D:/QuartusLite/Projet/PROC-ECE-main/Test/RAM24.vhd|
+!i113 1
+R13
+R14
+Asyn
+R61
+R3
+R4
+DEx4 work 5 ram24 0 22 6>7hA>dVLPM_`i@XQf1DE2
+!i122 15
+l61
+R66
+V5A>QKOmY:FB@6Cd>d^A2?1
+!s100 ^Y1abZ?R2Q;]0gR6d:@j73
+R8
+31
+R70
+!i10b 1
+R76
+R82
+R83
+!i113 1
+R13
+R14
+Eregisterfile
+Z84 w1643455688
+R2
+R3
+R4
+!i122 2
+R0
+Z85 8D:/QuartusLite/Projet/PROC-ECE-main/Test/RegisterFile.vhd
+Z86 FD:/QuartusLite/Projet/PROC-ECE-main/Test/RegisterFile.vhd
+l0
+R7
+V:2n?MNGHHnF>C__M0b]L93
+!s100 G5YH^K;_kA^mYf`aI2Y_I1
+R8
+31
+R48
+!i10b 1
+R49
+Z87 !s90 -reportprogress|300|-93|-work|work|D:/QuartusLite/Projet/PROC-ECE-main/Test/RegisterFile.vhd|
+Z88 !s107 D:/QuartusLite/Projet/PROC-ECE-main/Test/RegisterFile.vhd|
+!i113 1
+R13
+R14
+Aarchi
+R2
+R3
+R4
+DEx4 work 12 registerfile 0 22 :2n?MNGHHnF>C__M0b]L93
+!i122 2
+l96
+L60 236
+V>L3kNGL;N<K9EFJb>]2941
+!s100 [=<jTJJ83X4A7Bo]hQZ7j2
+R8
+31
+R48
+!i10b 1
+R49
+R87
+R88
+!i113 1
+R13
+R14
+Etestbenchtop
+Z89 w1643626364
+R2
+R3
+R4
+!i122 16
+R0
+Z90 8D:/QuartusLite/Projet/PROC-ECE-main/Test/TestBenchTop.vhd
+Z91 FD:/QuartusLite/Projet/PROC-ECE-main/Test/TestBenchTop.vhd
+l0
+L10 1
+V`=@I6LVCOOY]^[Kf4@7B:1
+!s100 kkNV[RfDeoBElM84Kg=EG3
+R8
+31
+Z92 !s110 1643641147
+!i10b 1
+R76
+Z93 !s90 -reportprogress|300|-93|-work|work|D:/QuartusLite/Projet/PROC-ECE-main/Test/TestBenchTop.vhd|
+!s107 D:/QuartusLite/Projet/PROC-ECE-main/Test/TestBenchTop.vhd|
+!i113 1
+R13
+R14
+Avhdl
+R2
+R3
+R4
+DEx4 work 12 testbenchtop 0 22 `=@I6LVCOOY]^[Kf4@7B:1
+!i122 16
+l39
+L14 63
+VSX?E0cgEJ<ONa@bYQhARg0
+!s100 agBM@cJY<@fOXZjK4^Ol?3
+R8
+31
+R92
+!i10b 1
+R76
+R93
+Z94 !s107 D:/QuartusLite/Projet/PROC-ECE-main/Test/TestBenchTop.vhd|
+!i113 1
+R13
+R14
+Etop
+Z95 w1643641068
+R2
+R3
+R4
+!i122 1
+R0
+Z96 8D:/QuartusLite/Projet/PROC-ECE-main/Test/Top.vhd
+Z97 FD:/QuartusLite/Projet/PROC-ECE-main/Test/Top.vhd
+l0
+R7
+VzdBi7^ff3K<Xng?`NaMG:3
+!s100 VFBPWMLK;M9zLEh58LWBc2
+R8
+31
+R48
+!i10b 1
+R49
+Z98 !s90 -reportprogress|300|-93|-work|work|D:/QuartusLite/Projet/PROC-ECE-main/Test/Top.vhd|
+Z99 !s107 D:/QuartusLite/Projet/PROC-ECE-main/Test/Top.vhd|
+!i113 1
+R13
+R14
+Aarchi
+R2
+R3
+R4
+DEx4 work 3 top 0 22 zdBi7^ff3K<Xng?`NaMG:3
+!i122 1
+l161
+L26 214
+VB<>Ud89>b<JLoiPOo5]EM0
+!s100 X5^RFC=Y:;Zh7@ToMUP9T2
+R8
+31
+R48
+!i10b 1
+R49
+R98
+R99
+!i113 1
+R13
+R14

@@ -1,0 +1,18 @@
+Fitter Status : Successful - Mon Jan 31 18:30:38 2022
+Quartus Prime Version : 21.1.0 Build 842 10/21/2021 SJ Lite Edition
+Revision Name : PROC-7SEG
+Top-level Entity Name : Top
+Family : MAX 10
+Device : 10M50DAF484C7G
+Timing Models : Final
+Total logic elements : 3,576 / 49,760 ( 7 % )
+    Total combinational functions : 3,412 / 49,760 ( 7 % )
+    Dedicated logic registers : 1,157 / 49,760 ( 2 % )
+Total registers : 1157
+Total pins : 98 / 360 ( 27 % )
+Total virtual pins : 0
+Total memory bits : 32,768 / 1,677,312 ( 2 % )
+Embedded Multiplier 9-bit elements : 0 / 288 ( 0 % )
+Total PLLs : 1 / 4 ( 25 % )
+UFM blocks : 0 / 1 ( 0 % )
+ADC blocks : 0 / 2 ( 0 % )
